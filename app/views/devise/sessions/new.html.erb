@@ -1,0 +1,66 @@
+  <div class="wrapper">
+
+    <div class="main-panel" style="width: 100%;background-color: white">
+
+
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row"><img src="/assets/logo.jpg" style="width: 500px"></div>
+          <div class="row" style="margin-top: 50px">
+            <div class="col-md-3" style="border-right: 3px solid #cdcdcd">
+              <img src="/assets/abc.jpg" style="width: 200px">
+              <br>
+              <img src="/assets/ConcreteBlockBody.png" style="width: 200px">
+              <br>
+              <img src="/assets/gtg1.jpg" style="width: 200px">
+            </div>
+            <div class="col-lg-9 col-md-9" style="    background-image: url(/assets/cisangkan.jpg);
+    height: 465px;
+    background-repeat: no-repeat;
+    background-size: cover;">
+              <div class="card" style="margin-top: 100px;
+    margin-left: 100px;
+    width: 600px;
+">
+                <div class="header">
+                  <h4 class="title">Login</h4>
+                </div>
+                <div class="content">
+
+
+
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Username</label>
+                          <%= f.email_field :email, autofocus: true, class: "form-control border-input", placeholder: "Email" %>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label>Password</label>
+                          <%= f.password_field :password, autocomplete: "off", class: "form-control border-input", placeholder: "Password"%>
+                          
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.submit "Log in", class: "btn btn-info btn-fill btn-wd", style: "margin-top: 25px;" %>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+              <div class="clearfix"></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
