@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kategori_id: 1
+  type: 
+  unit: MyString
+  warna: MyString
+  berat: MyString
+  warehouse: MyString
+
+two:
+  kategori_id: 1
+  type: 
+  unit: MyString
+  warna: MyString
+  berat: MyString
+  warehouse: MyString

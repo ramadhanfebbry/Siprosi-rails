@@ -14,17 +14,18 @@
         <th>Aksi</th>
       </thead>
       <tbody>
-      <% @hps.each_with_index do |hp, idx| %>
+        <% @hps.each_with_index do |hp| %>
         <tr>
-            <td><%= idx+1 %></td>
-            
-            <td><%= hp.ip_id %></td>
-        <td><%= hp.rp_id %></td>
-        <td><%= hp.hasil_produksi %></td>
-        <td><%= hp.target_produksi %></td>        
-        <td><%= link_to 'Edit', edit_hp_path(hp), class: "btn btn-info btn-fill btn-sm" %>
-        <%= link_to 'Destroy', hp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
-          </tr>              
+          <td><%= hp.id %></td>            
+          <td><%= hp.ip_id %></td>
+          <td><%= hp.rp_id %></td>
+          <td><%= hp.hasil_produksi %></td>
+          <td><%= hp.target_produksi %></td>        
+          <td>
+            <%= link_to 'Edit', edit_hp_path(hp), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Destroy', hp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </td>
+        </tr>              
         <%end%>
       </tbody>
     </table>

@@ -15,17 +15,18 @@
         <th>Aksi</th>
       </thead>
       <tbody>
-<% @gosoks.each do |gosok| %>
-      <tr>
-        <td><%= gosok.id %></td>
-        <td><%= gosok.rendam_id %></td>
-        <td><%= gosok.date %></td>
-        <td><%= gosok.hasil %></td>
-        <td><%= gosok.rusak %></td>
-        <td><%= gosok.keterangan %></td>
-        <td><%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
-        <%= link_to 'Destroy', gosok, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
-          </tr>              
+        <% @gosoks.each do |gosok| %>
+        <tr>
+          <td><%= gosok.id %></td>
+          <td><%= gosok.rendam_id %></td>
+          <td><%= gosok.date %></td>
+          <td><%= gosok.hasil %></td>
+          <td><%= gosok.rusak %></td>
+          <td><%= gosok.keterangan %></td>
+          <td><%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Destroy', gosok, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </td>
+        </tr>              
         <%end%>
       </tbody>
     </table>

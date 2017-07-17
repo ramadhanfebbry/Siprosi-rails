@@ -9,24 +9,26 @@
       <thead>
         <th>ID</th>
         <th>No. Gosok</th>
-      <th>Date</th>
-      <th>Hasil</th>
-      <th>Rusak</th>
-      <th>Keterangan</th>
+        <th>Date</th>
+        <th>Hasil</th>
+        <th>Rusak</th>
+        <th>Keterangan</th>
         <th>Aksi</th>
       </thead>
       <tbody>
-<% @cat_gtgs.each do |cat_gtg| %>
-      <tr>
-        <td><%= cat_gtg.cat_blok_id %></td>
-        <td><%= cat_gtg.gosok_id %></td>
-        <td><%= cat_gtg.date %></td>
-        <td><%= cat_gtg.hasil %></td>
-        <td><%= cat_gtg.rusak %></td>
-        <td><%= cat_gtg.keterangan %></td>
-        <td><%= link_to 'Edit', edit_cat_gtg_path(cat_gtg), class: "btn btn-info btn-fill btn-sm" %>
-        <%= link_to 'Destroy', cat_gtg, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
-          </tr>              
+        <% @cat_gtgs.each do |cat_gtg| %>
+        <tr>
+          <td><%= cat_gtg.id %></td>
+          <td><%= cat_gtg.gosok_id %></td>
+          <td><%= cat_gtg.date %></td>
+          <td><%= cat_gtg.hasil %></td>
+          <td><%= cat_gtg.rusak %></td>
+          <td><%= cat_gtg.keterangan %></td>
+          <td>
+            <%= link_to 'Edit', edit_cat_gtg_path(cat_gtg), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Destroy', cat_gtg, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </td>
+        </tr>              
         <%end%>
       </tbody>
     </table>

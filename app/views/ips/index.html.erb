@@ -16,18 +16,19 @@
         <th>Aksi</th>
       </thead>
       <tbody>
-      <% @ips.each_with_index do |user, idx| %>
+        <% @ips.each do |user| %>
         <tr>
-            <td><%= idx+1 %></td>
-            
-            <td><%= ip.date %></td>
-        <td><%= ip.plan_date %></td>
-        <td><%= ip.item_name %></td>
-        <td><%= ip.schedule_qty %></td>
-        <td><%= ip.keterangan %></td>
-        <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
-        <%= link_to 'Destroy', ip, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
-          </tr>              
+          <td><%= user.id %></td>          
+          <td><%= ip.date %></td>
+          <td><%= ip.plan_date %></td>
+          <td><%= ip.item_name %></td>
+          <td><%= ip.schedule_qty %></td>
+          <td><%= ip.keterangan %></td>
+          <td><
+            %= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Destroy', ip, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </td>
+        </tr>              
         <%end%>
       </tbody>
     </table>

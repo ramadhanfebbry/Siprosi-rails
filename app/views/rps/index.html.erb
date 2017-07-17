@@ -16,19 +16,20 @@
         <th>Aksi</th>
       </thead>
       <tbody>
-      <% @rps.each_with_index do |user, idx| %>
+        <% @rps.each do |rp| %>
         <tr>
-            <td><%= idx+1 %></td>
-            <td><%= rp.schedule_qty %></td>
-            <td><%= rp.item_name %></td>
-            <td><%= rp.site %></td>
-            <td><%= rp.date %></td>
-            <td><%= rp.keterangan %></td>
-            <td><%= rp.plan_date %></td>
-            <td>
+          <td><%= rp.id %></td>
+          <td><%= rp.schedule_qty %></td>
+          <td><%= rp.item_name %></td>
+          <td><%= rp.site %></td>
+          <td><%= rp.date %></td>
+          <td><%= rp.keterangan %></td>
+          <td><%= rp.plan_date %></td>
+          <td>
             <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
-            <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>            
-          </tr>              
+            <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %> 
+          </td>           
+        </tr>              
         <%end%>
       </tbody>
     </table>
