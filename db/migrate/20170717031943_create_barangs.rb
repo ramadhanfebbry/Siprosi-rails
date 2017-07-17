@@ -3,7 +3,7 @@ class CreateBarangs < ActiveRecord::Migration
     create_table :barangs do |t|
       t.string :id_barang
       t.integer :kategori_id
-      t.string :type
+      t.string :type_barang
       t.string :unit
       t.string :warna
       t.string :berat

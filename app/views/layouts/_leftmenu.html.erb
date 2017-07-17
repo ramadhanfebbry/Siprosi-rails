@@ -28,14 +28,16 @@
                         </a>
                     </li>
                 <% end %>
-
+                <% if current_user.role == 'pb' || current_user.role == 'produksi' %> 
                 <li class="<%='active' if controller_name == 'pbs' %>">
                         <a href="/pbs">
                             <i class="ti-view-list-alt"></i>
                             <p>Permintaan Bahan</p>
                         </a>
                 </li>
-
+                <% end %>
+                
+                <% if current_user.role == 'produksi' %> 
                 <li class="<%='active' if controller_name == 'rps' %>">
                         <a href="/rps">
                             <i class="ti-view-list-alt"></i>
@@ -54,42 +56,55 @@
                             <p>Hasil Produksi</p>
                         </a>
                 </li>
+                <% end %>
+                <% if current_user.role == 'cetak_blok' %> 
         <li class="<%='active' if controller_name == 'cetak_bloks' %>">
                         <a href="/cetak_bloks">
                             <i class="ti-view-list-alt"></i>
                             <p>Cetak Blok</p>
                         </a>
                 </li>        
+                <% end %>
+                <% if current_user.role == 'cetak_genteng' %> 
                   <li class="<%='active' if controller_name == 'cetak_gtgs' %>">
                         <a href="/cetak_gtgs">
                             <i class="ti-view-list-alt"></i>
                             <p>Cetak Genteng</p>
                         </a>
-                </li>        
+                </li>       
+                <% end %> 
+                <% if current_user.role == 'cat_blok' %> 
                 <li class="<%='active' if controller_name == 'cat_bloks' %>">
                         <a href="/cat_bloks">
                             <i class="ti-view-list-alt"></i>
                             <p>Cat Blok</p>
                         </a>
                 </li>        
+                <% end %>
+<% if current_user.role == 'rendam_genteng' %> 
                 <li class="<%='active' if controller_name == 'rendams' %>">
                         <a href="/rendams">
                             <i class="ti-view-list-alt"></i>
                             <p>Rendam</p>
                         </a>
                 </li>        
+                <% end %>
+                <% if current_user.role == 'gosok_genteng' %> 
                 <li class="<%='active' if controller_name == 'gosoks' %>">
                         <a href="/gosoks">
                             <i class="ti-view-list-alt"></i>
                             <p>Gosok</p>
                         </a>
-                </li>        
+                </li>       
+                <% end %> 
+                <% if current_user.role == 'cat_genteng' %> 
                 <li class="<%='active' if controller_name == 'cat_gtgs' %>">
                         <a href="/cat_gtgs">
                             <i class="ti-view-list-alt"></i>
                             <p>Cat Genteng</p>
                         </a>
                 </li>        
+                <% end %>
 
         <li class="active-pro">
                     <a href="<?php echo $GLOBALS['BASE_DIR']; ?>signout.php">

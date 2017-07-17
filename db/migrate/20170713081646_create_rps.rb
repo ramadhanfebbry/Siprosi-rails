@@ -7,6 +7,7 @@ class CreateRps < ActiveRecord::Migration
       t.string :date
       t.text :keterangan
       t.string :plan_date
+      t.integer :barang_id
 
       t.timestamps null: false
     end

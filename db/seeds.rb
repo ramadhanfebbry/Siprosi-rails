@@ -5,12 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-  %w(admin ppic produksi cetak_genteng rendam_genteng).each do |a|
+  %w(admin ppic produksi gudang cetak_genteng rendam_genteng gudang gosok_genteng cat_genteng cetak_blok cat_blok pb).each do |a|
     User.create(email: "#{a}@siprosi.com", username: a, name: a, password: "12345678", role: a)
   end
 
 connection = ActiveRecord::Base.connection()
-connection.execute("INSERT INTO barangs (id_barang, kategori_id, type, unit, warna, berat, warehouse) VALUES
+connection.execute("INSERT INTO barangs (id_barang, kategori_id, type_barang, unit, warna, berat, warehouse) VALUES
 ('GTG-00001', 1, 'Victoria State Nok Atas', 'pcs', 'Natural', '4.75', 'P-PGD GTG Warna-site'),
 ('GTG-00002', 1, 'Victoria State Nok Bawah', 'pcs', 'Natural', '4.75', 'P-PGD GTG Warna-site'),
 ('GTG-00003', 1, 'Victoria State Nok Samping', 'pcs', 'Natural', '4.75', 'P-PGD GTG Warna-site'),

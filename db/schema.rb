@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170717031943) do
   create_table "barangs", force: :cascade do |t|
     t.string   "id_barang"
     t.integer  "kategori_id"
-    t.string   "type"
+    t.string   "type_barang"
     t.string   "unit"
     t.string   "warna"
     t.string   "berat"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170717031943) do
     t.string   "date"
     t.text     "keterangan"
     t.string   "plan_date"
+    t.integer  "barang_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
