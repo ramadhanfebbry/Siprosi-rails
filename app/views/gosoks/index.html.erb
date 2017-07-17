@@ -1,35 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Gosoks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rendam</th>
-      <th>Date</th>
-      <th>Hasil</th>
-      <th>Rusak</th>
-      <th>Keterangan</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @gosoks.each do |gosok| %>
+<div class="card">
+  <div class="header">
+    <h4 class="title">Cetak Genteng</h4>
+    <p class="category">Here is a subtitle for this table</p>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>No. Rendam</th>        
+        <th>Date</th>
+        <th>Hasil</th>
+        <th>Rusak</th>
+        <th>Keterangan</th>        
+        <th>Aksi</th>
+      </thead>
+      <tbody>
+<% @gosoks.each do |gosok| %>
       <tr>
+        <td><%= gosok.id %></td>
         <td><%= gosok.rendam_id %></td>
         <td><%= gosok.date %></td>
         <td><%= gosok.hasil %></td>
         <td><%= gosok.rusak %></td>
         <td><%= gosok.keterangan %></td>
-        <td><%= link_to 'Show', gosok %></td>
-        <td><%= link_to 'Edit', edit_gosok_path(gosok) %></td>
-        <td><%= link_to 'Destroy', gosok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <td><%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
+        <%= link_to 'Destroy', gosok, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </tr>              
+        <%end%>
+      </tbody>
+    </table>
 
-<br>
-
-<%= link_to 'New Gosok', new_gosok_path %>
+  </div>
+</div>
