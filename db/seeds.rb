@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  %w(admin ppic produksi cetak_genteng rendam_genteng).each do |a|
+    User.create(email: "#{a}@siprosi.com", username: a, name: a, password: "12345678", role: a)
+  end

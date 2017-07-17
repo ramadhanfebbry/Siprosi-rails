@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip_id: 1
+  rp_id: 1
+  hasil_produksi: 1
+  target_produksi: 1
+
+two:
+  ip_id: 1
+  rp_id: 1
+  hasil_produksi: 1
+  target_produksi: 1

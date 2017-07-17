@@ -14,108 +14,83 @@
             </div>
 
             <ul class="nav">
-                <li class="<?php if($module_name == 'siprosi'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>index.php">
+                <li class="<%='active' if controller_name == 'dashboard' %>">
+                    <a href="/">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <?php if($_SESSION['level'] == 'Admin'){ ?> 
-                    <li class="<?php if($module_name == 'USER'){echo 'active';} ?>">
-                        <a href="<?php echo $GLOBALS['BASE_DIR']; ?>USER/index.php">
+                <% if current_user.role == 'admin' %> 
+                    <li class="<%='active' if controller_name == 'users' %>">
+                        <a href="/users">
                             <i class="ti-view-list-alt"></i>
                             <p>Kelola User</p>
                         </a>
                     </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'PPIC'){ ?> 
-                <li class="<?php if($module_name == 'MPO'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>MPO/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>kelola rencana produksi</p>
-                    </a>
+                <% end %>
+
+                <li class="<%='active' if controller_name == 'pbs' %>">
+                        <a href="/pbs">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Permintaan Bahan</p>
+                        </a>
                 </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'PPIC'){ ?> 
-                <li class="<?php if($module_name == 'PB'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>PB/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table pb</p>
-                    </a>
+
+                <li class="<%='active' if controller_name == 'rps' %>">
+                        <a href="/rps">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Rancangan Produksi</p>
+                        </a>
                 </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Produksi'){ ?> 
-                <li class="<?php if($module_name == 'IP'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>IP/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table ip</p>
-                    </a>
+                <li class="<%='active' if controller_name == 'ips' %>">
+                        <a href="/ips">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Instruksi Produksi</p>
+                        </a>
                 </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Cetak Genteng'){ ?> 
-                <li class="<?php if($module_name == 'CETAK_GTG'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>CETAK_GTG/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table CETAK GTG</p>
-                    </a>
+         <li class="<%='active' if controller_name == 'hps' %>">
+                        <a href="/hps">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Hasil Produksi</p>
+                        </a>
                 </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Cetak Block'){ ?> 
-                <li class="<?php if($module_name == 'CETAK_BLOCK'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>CETAK_BLOCK/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table CETAK BLOCK</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Barang Rendam Genteng'){ ?> 
-                <li class="<?php if($module_name == 'RENDAM'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>RENDAM/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table RENDAM</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Barang Gosok Genteng'){ ?> 
-                <li class="<?php if($module_name == 'GOSOK'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>GOSOK/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table GOSOK</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Pengecetan Barang Block'){ ?> 
-                <li class="<?php if($module_name == 'CAT_BLOCK'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>CAT_BLOCK/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table CAT BLOCK</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'Pengecetan Barang Genteng'){ ?> 
-                <li class="<?php if($module_name == 'CAT_GTG'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>CAT_GTG/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table CAT GTG</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'PPIC'){ ?> 
-                <li class="<?php if($module_name == 'HASIL_PRODUKSI'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>HASIL_PRODUKSI/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table HASIL PRODUKSI</p>
-                    </a>
-                </li>
-                <?php }?>
-                <?php if($_SESSION['level'] == 'PPIC'){ ?> 
-                <li class="<?php if($module_name == 'PROD'){echo 'active';} ?>">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>PROD/index.php">
-                        <i class="ti-view-list-alt"></i>
-                        <p>table PROD</p>
-                    </a>
-                </li>
-                <?php }?>
+        <li class="<%='active' if controller_name == 'cetak_bloks' %>">
+                        <a href="/cetak_bloks">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Cetak Blok</p>
+                        </a>
+                </li>        
+                  <li class="<%='active' if controller_name == 'cetak_gtgs' %>">
+                        <a href="/cetak_gtgs">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Cetak Genteng</p>
+                        </a>
+                </li>        
+                <li class="<%='active' if controller_name == 'cat_bloks' %>">
+                        <a href="/cat_bloks">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Cat Blok</p>
+                        </a>
+                </li>        
+                <li class="<%='active' if controller_name == 'rendams' %>">
+                        <a href="/rendams">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Rendam</p>
+                        </a>
+                </li>        
+                <li class="<%='active' if controller_name == 'gosoks' %>">
+                        <a href="/gosoks">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Gosok</p>
+                        </a>
+                </li>        
+                <li class="<%='active' if controller_name == 'cat_gtgs' %>">
+                        <a href="/cat_gtgs">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Cat Genteng</p>
+                        </a>
+                </li>        
+
         <li class="active-pro">
                     <a href="<?php echo $GLOBALS['BASE_DIR']; ?>signout.php">
                         <i class="ti-export"></i>
@@ -135,20 +110,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <?php 
-                        if($module_name != "siprosi"){
-                            if($file_name == "new.php" ){
-                                $title_name = "New";
-                            }else if($file_name == "edit.php"){
-                                $title_name = "Edit";
-                            }else{
-                                $title_name = "List";
-                            }
-                            echo "<a class='navbar-brand' href='#'>". $title_name ." ". $module_name ."</a>";
-                        }else{
-                            echo "<a class='navbar-brand' href='#'>Welcome to SIPROSI</a>";
-                        }
-                    ?>
+                    <a class='navbar-brand' href='#'>Welcome to SIPROSI</a>                        
                 </div>
 
                 
@@ -161,10 +123,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-                        <?php 
-                        if($file_name != "new.php" && $module_name != "siprosi"){
-                            echo '<div class="pull-right"><a class="btn btn-info btn-fill btn-wd" href="new.php">Tambah baru</a></div><div class="clearfix"></div><br/>';
-                        }
-                        ?>
+                        <p class="alert"><%= alert %></p>
+                        <% unless controller_name == "dashboard" %>
+                          <div class="pull-right"><a class="btn btn-info btn-fill btn-wd" href="<%= controller_name %>/new">Tambah baru</a></div><div class="clearfix"></div><br/>
+                        <% end %>
                         

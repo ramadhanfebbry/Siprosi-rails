@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   
 
+  resources :cat_bloks
+  resources :cat_gtgs
+  resources :gosoks
+  resources :rendams
+  resources :cetak_bloks
+  resources :cetak_gtgs
+  resources :hps
+  resources :ips
+  resources :rps
+  resources :pbs
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,7 +25,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :users
 
   # Example resource route with options:
   #   resources :products do

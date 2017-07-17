@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rp:</strong>
+  <%= @pb.rp_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @pb.date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pb.status %>
+</p>
+
+<%= link_to 'Edit', edit_pb_path(@pb) %> |
+<%= link_to 'Back', pbs_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @ip.date %>
+</p>
+
+<p>
+  <strong>Plan date:</strong>
+  <%= @ip.plan_date %>
+</p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @ip.item_name %>
+</p>
+
+<p>
+  <strong>Schedule qty:</strong>
+  <%= @ip.schedule_qty %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @ip.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_ip_path(@ip) %> |
+<%= link_to 'Back', ips_path %>

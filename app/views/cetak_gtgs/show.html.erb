@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @cetak_gtg.ip_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cetak_gtg.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @cetak_gtg.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @cetak_gtg.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @cetak_gtg.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_cetak_gtg_path(@cetak_gtg) %> |
+<%= link_to 'Back', cetak_gtgs_path %>

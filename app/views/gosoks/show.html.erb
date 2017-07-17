@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rendam:</strong>
+  <%= @gosok.rendam_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gosok.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @gosok.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @gosok.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @gosok.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_gosok_path(@gosok) %> |
+<%= link_to 'Back', gosoks_path %>

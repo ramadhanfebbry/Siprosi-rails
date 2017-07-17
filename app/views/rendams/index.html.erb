@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rendams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cetak gtg</th>
+      <th>Date</th>
+      <th>Hasil</th>
+      <th>Rusak</th>
+      <th>Keterangan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rendams.each do |rendam| %>
+      <tr>
+        <td><%= rendam.cetak_gtg_id %></td>
+        <td><%= rendam.date %></td>
+        <td><%= rendam.hasil %></td>
+        <td><%= rendam.rusak %></td>
+        <td><%= rendam.keterangan %></td>
+        <td><%= link_to 'Show', rendam %></td>
+        <td><%= link_to 'Edit', edit_rendam_path(rendam) %></td>
+        <td><%= link_to 'Destroy', rendam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rendam', new_rendam_path %>

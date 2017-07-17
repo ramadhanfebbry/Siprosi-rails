@@ -1,0 +1,37 @@
+<%= form_for(@gosok) do |f| %>
+  <% if @gosok.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gosok.errors.count, "error") %> prohibited this gosok from being saved:</h2>
+
+      <ul>
+      <% @gosok.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rendam_id %><br>
+    <%= f.number_field :rendam_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :hasil %><br>
+    <%= f.number_field :hasil %>
+  </div>
+  <div class="field">
+    <%= f.label :rusak %><br>
+    <%= f.number_field :rusak %>
+  </div>
+  <div class="field">
+    <%= f.label :keterangan %><br>
+    <%= f.text_field :keterangan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

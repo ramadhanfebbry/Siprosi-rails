@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Schedule qty:</strong>
+  <%= @rp.schedule_qty %>
+</p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @rp.item_name %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @rp.site %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @rp.date %>
+</p>
+
+<p>
+  <strong>Ketengaran:</strong>
+  <%= @rp.ketengaran %>
+</p>
+
+<p>
+  <strong>Plan date:</strong>
+  <%= @rp.plan_date %>
+</p>
+
+<%= link_to 'Edit', edit_rp_path(@rp) %> |
+<%= link_to 'Back', rps_path %>

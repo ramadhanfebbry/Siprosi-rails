@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cetak blok:</strong>
+  <%= @cat_blok.cetak_blok_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cat_blok.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @cat_blok.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @cat_blok.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @cat_blok.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_cat_blok_path(@cat_blok) %> |
+<%= link_to 'Back', cat_bloks_path %>

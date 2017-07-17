@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cetak gtg:</strong>
+  <%= @rendam.cetak_gtg_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @rendam.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @rendam.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @rendam.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @rendam.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_rendam_path(@rendam) %> |
+<%= link_to 'Back', rendams_path %>

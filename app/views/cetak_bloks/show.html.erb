@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @cetak_blok.ip_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cetak_blok.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @cetak_blok.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @cetak_blok.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @cetak_blok.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_cetak_blok_path(@cetak_blok) %> |
+<%= link_to 'Back', cetak_bloks_path %>

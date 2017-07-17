@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Rancangan Produksi</h4>
+    <p class="category">Here is a subtitle for this table</p>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Site</th>
+        <th>Date</th>
+        <th>Keterangan</th>
+        <th>Plan date</th>
+        <th>Aksi</th>
+      </thead>
+      <tbody>
+      <% @rps.each_with_index do |user, idx| %>
+        <tr>
+            <td><%= idx+1 %></td>
+            <td><%= rp.schedule_qty %></td>
+            <td><%= rp.item_name %></td>
+            <td><%= rp.site %></td>
+            <td><%= rp.date %></td>
+            <td><%= rp.keterangan %></td>
+            <td><%= rp.plan_date %></td>
+            <td>
+            <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>            
+          </tr>              
+        <%end%>
+      </tbody>
+    </table>
+
+  </div>
+</div>

@@ -11,10 +11,108 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710001816) do
+ActiveRecord::Schema.define(version: 20170717001629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cat_bloks", force: :cascade do |t|
+    t.integer  "cetak_blok_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "cat_gtgs", force: :cascade do |t|
+    t.integer  "gosok_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cetak_bloks", force: :cascade do |t|
+    t.integer  "ip_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cetak_gtgs", force: :cascade do |t|
+    t.integer  "ip_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gosoks", force: :cascade do |t|
+    t.integer  "rendam_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hps", force: :cascade do |t|
+    t.integer  "ip_id"
+    t.integer  "rp_id"
+    t.integer  "hasil_produksi"
+    t.integer  "target_produksi"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "ips", force: :cascade do |t|
+    t.string   "date"
+    t.string   "plan_date"
+    t.string   "item_name"
+    t.string   "schedule_qty"
+    t.string   "keterangan"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "pbs", force: :cascade do |t|
+    t.integer  "rp_id"
+    t.string   "date"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rendams", force: :cascade do |t|
+    t.integer  "cetak_gtg_id"
+    t.string   "date"
+    t.integer  "hasil"
+    t.integer  "rusak"
+    t.string   "keterangan"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "rps", force: :cascade do |t|
+    t.integer  "schedule_qty"
+    t.string   "item_name"
+    t.string   "site"
+    t.string   "date"
+    t.text     "keterangan"
+    t.string   "plan_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +128,8 @@ ActiveRecord::Schema.define(version: 20170710001816) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

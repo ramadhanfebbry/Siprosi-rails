@@ -1,0 +1,37 @@
+<%= form_for(@cat_blok) do |f| %>
+  <% if @cat_blok.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cat_blok.errors.count, "error") %> prohibited this cat_blok from being saved:</h2>
+
+      <ul>
+      <% @cat_blok.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cetak_blok_id %><br>
+    <%= f.number_field :cetak_blok_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :hasil %><br>
+    <%= f.number_field :hasil %>
+  </div>
+  <div class="field">
+    <%= f.label :rusak %><br>
+    <%= f.number_field :rusak %>
+  </div>
+  <div class="field">
+    <%= f.label :keterangan %><br>
+    <%= f.text_field :keterangan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

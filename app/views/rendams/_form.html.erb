@@ -1,0 +1,37 @@
+<%= form_for(@rendam) do |f| %>
+  <% if @rendam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rendam.errors.count, "error") %> prohibited this rendam from being saved:</h2>
+
+      <ul>
+      <% @rendam.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cetak_gtg_id %><br>
+    <%= f.number_field :cetak_gtg_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :hasil %><br>
+    <%= f.number_field :hasil %>
+  </div>
+  <div class="field">
+    <%= f.label :rusak %><br>
+    <%= f.number_field :rusak %>
+  </div>
+  <div class="field">
+    <%= f.label :keterangan %><br>
+    <%= f.text_field :keterangan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

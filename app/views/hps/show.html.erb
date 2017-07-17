@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @hp.ip_id %>
+</p>
+
+<p>
+  <strong>Rp:</strong>
+  <%= @hp.rp_id %>
+</p>
+
+<p>
+  <strong>Hasil produksi:</strong>
+  <%= @hp.hasil_produksi %>
+</p>
+
+<p>
+  <strong>Target produksi:</strong>
+  <%= @hp.target_produksi %>
+</p>
+
+<%= link_to 'Edit', edit_hp_path(@hp) %> |
+<%= link_to 'Back', hps_path %>

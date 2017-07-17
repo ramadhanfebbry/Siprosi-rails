@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Permintaan Bahan</h4>
+    <p class="category">Here is a subtitle for this table</p>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Rp</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Aksi</th>
+      </thead>
+      <tbody>
+      <% @pbs.each_with_index do |user, idx| %>
+        <tr>
+            <td><%= idx+1 %></td>
+            
+            <td><%= pb.rp_id %></td>
+            <td><%= pb.date %></td>
+            <td><%= pb.status %></td>
+            <td>
+              <%= link_to "Edit", edit_pb_path(pb), class: "btn btn-info btn-fill btn-sm" %>
+              <%= link_to "Delete", pb, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+              
+            </td>
+          </tr>              
+        <%end%>
+      </tbody>
+    </table>
+
+  </div>
+</div>

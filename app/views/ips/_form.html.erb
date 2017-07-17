@@ -1,0 +1,73 @@
+
+<div class="card">
+  <div class="header">
+    <h4 class="title"><%= action_name.titleize %></h4>
+  </div>
+  <div class="content">
+    <%= form_for(@ip) do |f| %>
+       <div class="row">
+        
+        <div class="col-md-12">
+            <% if @ip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ip.errors.count, "error") %> prohibited this ip from being saved:</h2>
+
+      <ul>
+      <% @ip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+        </div>        
+      </div>
+
+      <div class="row">
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Schedule Qty (DD/MM/YYYY)</label>            
+            <%= f.number_field :schedule_qty, :class => "form-control border-input" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Item name</label>
+            <%= f.text_field :item_name, :class => "form-control border-input" %>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label>Keterangan</label>            
+            <%= f.text_field :keterangan, :class => "form-control border-input" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Plan Date (DD/MM/YYYY)</label>
+            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Date (DD/MM/YYYY)</label>
+            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+          </div>
+        </div>
+        
+      </div>
+
+ 
+      <div class="text-center">
+        <button type="submit" class="btn btn-info btn-fill btn-wd">Save</button>
+      </div>
+      <div class="clearfix"></div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gosok_id: 1
+  date: MyString
+  hasil: 1
+  rusak: 1
+  keterangan: MyString
+
+two:
+  gosok_id: 1
+  date: MyString
+  hasil: 1
+  rusak: 1
+  keterangan: MyString

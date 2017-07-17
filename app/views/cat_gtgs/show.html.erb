@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gosok:</strong>
+  <%= @cat_gtg.gosok_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cat_gtg.date %>
+</p>
+
+<p>
+  <strong>Hasil:</strong>
+  <%= @cat_gtg.hasil %>
+</p>
+
+<p>
+  <strong>Rusak:</strong>
+  <%= @cat_gtg.rusak %>
+</p>
+
+<p>
+  <strong>Keterangan:</strong>
+  <%= @cat_gtg.keterangan %>
+</p>
+
+<%= link_to 'Edit', edit_cat_gtg_path(@cat_gtg) %> |
+<%= link_to 'Back', cat_gtgs_path %>

@@ -1,0 +1,36 @@
+
+<div class="card">
+  <div class="header">
+    <h4 class="title">Instruksi Produksi</h4>
+    <p class="category">Here is a subtitle for this table</p>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Plan date</th>
+        <th>Item name</th>
+        <th>Schedule qty</th>
+        <th>Keterangan</th>
+        <th>Aksi</th>
+      </thead>
+      <tbody>
+      <% @ips.each_with_index do |user, idx| %>
+        <tr>
+            <td><%= idx+1 %></td>
+            
+            <td><%= ip.date %></td>
+        <td><%= ip.plan_date %></td>
+        <td><%= ip.item_name %></td>
+        <td><%= ip.schedule_qty %></td>
+        <td><%= ip.keterangan %></td>
+        <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
+        <%= link_to 'Destroy', ip, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          </tr>              
+        <%end%>
+      </tbody>
+    </table>
+
+  </div>
+</div>

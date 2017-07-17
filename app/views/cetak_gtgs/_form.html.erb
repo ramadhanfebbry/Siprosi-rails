@@ -1,0 +1,71 @@
+
+<div class="card">
+  <div class="header">
+    <h4 class="title"><%= action_name.titleize %></h4>
+  </div>
+  <div class="content">
+    <%= form_for(@cetak_gtg) do |f| %>
+    <div class="row">
+        
+        <div class="col-md-12">
+            <% if @cetak_gtg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cetak_gtg.errors.count, "error") %> prohibited this cetak_gtg from being saved:</h2>
+
+      <ul>
+      <% @cetak_gtg.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+        </div>        
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Instruksi Produksi</label>
+            <%= f.select :ip_id, Ip.all.map { |value| [ key, value ] }, {}, :class => "form-control border-input" %>
+          </div>
+        </div>    
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Date (DD/MM/YYYY)</label>
+            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+          </div>
+        </div>
+        
+      </div>
+
+        
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Hasil</label>
+            <%= f.number_field :hasil, :class => "form-control border-input" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Rusak</label>
+            <%= f.number_field :rusak, :class => "form-control border-input" %>
+          </div>
+        </div>
+      </div>
+            <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Keterangan</label>
+            <%= f.text_field :hasil, :class => "form-control border-input" %>
+          </div>
+        </div>
+        </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-info btn-fill btn-wd">Save</button>
+      </div>
+      <div class="clearfix"></div>
+    <% end %>
+  </div>
+</div>
