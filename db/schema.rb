@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20170717031943) do
     t.string   "warna"
     t.string   "berat"
     t.string   "warehouse"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "cat_bloks", force: :cascade do |t|

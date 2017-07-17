@@ -9,7 +9,7 @@ class CreateBarangs < ActiveRecord::Migration
       t.string :berat
       t.string :warehouse
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
