@@ -1,6 +1,7 @@
 class CreateBarangs < ActiveRecord::Migration
   def change
     create_table :barangs do |t|
+      t.string :id_barang
       t.integer :kategori_id
       t.string :type
       t.string :unit
