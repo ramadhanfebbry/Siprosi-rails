@@ -14,9 +14,9 @@
         <th>Aksi</th>
       </thead>
       <tbody>
-      <% @users.each_with_index do |user, idx| %>
+      <% @users.each do |user| %>
         <tr>
-            <td><%= idx+1 %></td>
+            <td><%= user.id %></td>
             <td><%= user.username %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
