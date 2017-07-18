@@ -107,10 +107,7 @@
                 <% end %>
 
         <li class="active-pro">
-                    <a href="<?php echo $GLOBALS['BASE_DIR']; ?>signout.php">
-                        <i class="ti-export"></i>
-                        <p>Sign Out</p>
-                    </a>
+          <%= link_to("<i class='ti-export'></i><p>Sign Out</p>".html_safe, destroy_user_session_path, method: :delete) %>        
                 </li>
             </ul>
       </div>
