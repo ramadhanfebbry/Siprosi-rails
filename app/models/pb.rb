@@ -1,4 +1,5 @@
 class Pb < ActiveRecord::Base
-  validates :date, :pb_id, presence: true
-  belongs_to :pb
+  validates :date, :rp_id, presence: true
+  belongs_to :rp
+  has_many :ips, dependent: :destroy
 end

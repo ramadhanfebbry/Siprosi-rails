@@ -26,7 +26,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Instruksi Produksi</label>
-            <%= f.select :ip_id, Ip.all.map { |value| [ key, value ] }, {}, :class => "form-control border-input" %>
+          <%= f.select :ip_id, Ip.blok_site.map { |c| [ "IP-#{c.id}", c.id ] }, {}, :class => "form-control border-input" %>
           </div>
         </div>    
         <div class="col-md-6">
@@ -58,7 +58,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Keterangan</label>
-            <%= f.text_field :hasil, :class => "form-control border-input" %>
+            <%= f.text_field :keterangan, :class => "form-control border-input" %>
           </div>
         </div>
         </div>

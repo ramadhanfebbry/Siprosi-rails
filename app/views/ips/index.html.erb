@@ -10,7 +10,9 @@
         <th>ID</th>
         <th>Permintaan Bahan</th>
         <th>Date</th>
-        <th>Aksi</th>
+        <% if current_user.role.eql?('produksi') %>
+          <th>Aksi</th>
+        <% end %>
       </thead>
       <tbody>
         <% @ips.each do |ip| %>
@@ -18,8 +20,9 @@
           <td><%= ip.id %></td>          
           <td><%= ip.pb_id %></td>        
           <td><%= ip.date %></td>        
-          <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
-            
+          <% if current_user.role.eql?('produksi') %>
+            <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
+          <% end %>
           </td>
         </tr>              
         <%end%>
