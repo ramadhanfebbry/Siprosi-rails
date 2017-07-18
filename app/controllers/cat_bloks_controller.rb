@@ -28,7 +28,7 @@ class CatBloksController < ApplicationController
 
     respond_to do |format|
       if @cat_blok.save
-        format.html { redirect_to @cat_blok, notice: 'Cat blok was successfully created.' }
+        format.html { redirect_to cat_bloks_url, notice: 'Cat blok was successfully created.' }
         format.json { render :show, status: :created, location: @cat_blok }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CatBloksController < ApplicationController
   def update
     respond_to do |format|
       if @cat_blok.update(cat_blok_params)
-        format.html { redirect_to @cat_blok, notice: 'Cat blok was successfully updated.' }
+        format.html { redirect_to cat_bloks_url, notice: 'Cat blok was successfully updated.' }
         format.json { render :show, status: :ok, location: @cat_blok }
       else
         format.html { render :edit }

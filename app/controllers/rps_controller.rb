@@ -28,7 +28,7 @@ class RpsController < ApplicationController
 
     respond_to do |format|
       if @rp.save
-        format.html { redirect_to @rp, notice: 'Rp was successfully created.' }
+        format.html { redirect_to rps_url, notice: 'Rp was successfully created.' }
         format.json { render :show, status: :created, location: @rp }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RpsController < ApplicationController
   def update
     respond_to do |format|
       if @rp.update(rp_params)
-        format.html { redirect_to @rp, notice: 'Rp was successfully updated.' }
+        format.html { redirect_to rps_url, notice: 'Rp was successfully updated.' }
         format.json { render :show, status: :ok, location: @rp }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class RpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rp_params
-      params.require(:rp).permit(:schedule_qty, :item_name, :site, :date, :ketengaran, :plan_date)
+      params.require(:rp).permit(:schedule_qty, :item_name, :site, :date, :keterangan, :plan_date, :barang_id)
     end
 end

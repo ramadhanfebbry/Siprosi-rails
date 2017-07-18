@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-  %w(admin ppic produksi gudang cetak_genteng rendam_genteng gudang gosok_genteng cat_genteng cetak_blok cat_blok pb).each do |a|
+  User::ROLE.each do |a|
     User.create(email: "#{a}@siprosi.com", username: a, name: a, password: "12345678", role: a)
   end
 

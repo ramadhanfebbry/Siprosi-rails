@@ -26,7 +26,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Rencana Produksi</label>            
-            <%= f.select :rp_id, Rp.all.map { |value| [ key, value ] }, {}, :class => "form-control border-input" %>
+            <%= f.select :rp_id, Rp.all.map { |c| [ "RP-#{c.id}", c.id ] }, {}, :class => "form-control border-input" %>
           </div>
         </div>
         <div class="col-md-6">

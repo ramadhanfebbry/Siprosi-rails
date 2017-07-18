@@ -26,7 +26,7 @@
         
         <div class="col-md-6">
           <div class="form-group">
-            <label>Schedule Qty (DD/MM/YYYY)</label>            
+            <label>Schedule Qty</label>            
             <%= f.number_field :schedule_qty, :class => "form-control border-input" %>
           </div>
         </div>
@@ -43,8 +43,8 @@
         
         <div class="col-md-6">
           <div class="form-group">
-            <label>Site</label>            
-            <%= f.text_field :site, :class => "form-control border-input" %>
+            <label>Barang</label>
+            <%= f.select :barang_id, Barang.all.map { |c| [ "#{c.type_barang} (#{c.id_barang})", c.id ] }, {}, :class => "form-control border-input" %>
           </div>
         </div>
         <div class="col-md-6">
@@ -59,26 +59,18 @@
       <div class="row">
       <div class="col-md-6">
           <div class="form-group">
-            <label>Barang</label>
-            <%= f.select :barang_id, Barang.all.map { |c| [ c.id_barang, c.type_barang ] }, {}, :class => "form-control border-input" %>
+            <label>Keterangan</label>            
+            <%= f.text_field :keterangan, :class => "form-control border-input" %>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Plan Date (DD/MM/YYYY)</label>
-            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+            <%= f.text_field :plan_date, :class => "form-control border-input datepicker" %>
           </div>
         </div>
         </div>
-        <div class="row">
-      <div class="col-md-6">
-          <div class="form-group">
-            <label>Keterangan</label>            
-            <%= f.text_field :keterangan, :class => "form-control border-input" %>
-          </div>
-        </div>
-        
-      </div>
+      
       <div class="text-center">
         <button type="submit" class="btn btn-info btn-fill btn-wd">Save</button>
       </div>

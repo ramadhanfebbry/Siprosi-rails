@@ -28,7 +28,7 @@ class CatGtgsController < ApplicationController
 
     respond_to do |format|
       if @cat_gtg.save
-        format.html { redirect_to @cat_gtg, notice: 'Cat gtg was successfully created.' }
+        format.html { redirect_to cat_gtgs_url, notice: 'Cat gtg was successfully created.' }
         format.json { render :show, status: :created, location: @cat_gtg }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CatGtgsController < ApplicationController
   def update
     respond_to do |format|
       if @cat_gtg.update(cat_gtg_params)
-        format.html { redirect_to @cat_gtg, notice: 'Cat gtg was successfully updated.' }
+        format.html { redirect_to cat_gtgs_url, notice: 'Cat gtg was successfully updated.' }
         format.json { render :show, status: :ok, location: @cat_gtg }
       else
         format.html { render :edit }

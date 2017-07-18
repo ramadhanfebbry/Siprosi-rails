@@ -28,7 +28,7 @@ class GosoksController < ApplicationController
 
     respond_to do |format|
       if @gosok.save
-        format.html { redirect_to @gosok, notice: 'Gosok was successfully created.' }
+        format.html { redirect_to gosoks_url, notice: 'Gosok was successfully created.' }
         format.json { render :show, status: :created, location: @gosok }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GosoksController < ApplicationController
   def update
     respond_to do |format|
       if @gosok.update(gosok_params)
-        format.html { redirect_to @gosok, notice: 'Gosok was successfully updated.' }
+        format.html { redirect_to gosoks_url, notice: 'Gosok was successfully updated.' }
         format.json { render :show, status: :ok, location: @gosok }
       else
         format.html { render :edit }

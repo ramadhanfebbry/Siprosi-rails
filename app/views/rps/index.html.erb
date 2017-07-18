@@ -13,7 +13,9 @@
         <th>Date</th>
         <th>Keterangan</th>
         <th>Plan date</th>
+        <% if current_user.role == 'ppic' %> 
         <th>Aksi</th>
+        <% end %>
       </thead>
       <tbody>
         <% @rps.each do |rp| %>
@@ -25,10 +27,12 @@
           <td><%= rp.date %></td>
           <td><%= rp.keterangan %></td>
           <td><%= rp.plan_date %></td>
+          <% if current_user.role == 'ppic' %> 
           <td>
             <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
             <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %> 
           </td>           
+          <% end %>
         </tr>              
         <%end%>
       </tbody>

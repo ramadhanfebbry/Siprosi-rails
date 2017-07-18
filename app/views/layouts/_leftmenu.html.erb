@@ -21,14 +21,14 @@
                     </a>
                 </li>
                 <% if current_user.role == 'admin' %> 
-                    <li class="<%='active' if controller_name == 'users' %>">
-                        <a href="/users">
+                    <li class="<%='active' if controller_name == 'manage_users' %>">
+                        <a href="manage_users">
                             <i class="ti-view-list-alt"></i>
                             <p>Kelola User</p>
                         </a>
                     </li>
                 <% end %>
-                <% if current_user.role == 'pb' || current_user.role == 'produksi' %> 
+                <% if current_user.role == 'gudang' || current_user.role == 'produksi' %> 
                 <li class="<%='active' if controller_name == 'pbs' %>">
                         <a href="/pbs">
                             <i class="ti-view-list-alt"></i>
@@ -37,19 +37,23 @@
                 </li>
                 <% end %>
                 
-                <% if current_user.role == 'produksi' %> 
+                <% if current_user.role == 'produksi' || current_user.role == 'ppic' %> 
                 <li class="<%='active' if controller_name == 'rps' %>">
                         <a href="/rps">
                             <i class="ti-view-list-alt"></i>
-                            <p>Rancangan Produksi</p>
+                            <p>Rencana Produksi</p>
                         </a>
                 </li>
+                <% end %>
+                <% if ['produksi', 'cetak_genteng', 'cetak_blok'].include?(current_user.role) %>
                 <li class="<%='active' if controller_name == 'ips' %>">
                         <a href="/ips">
                             <i class="ti-view-list-alt"></i>
                             <p>Instruksi Produksi</p>
                         </a>
                 </li>
+                <% end %>
+                <% if current_user.role == 'produksi' %> 
          <li class="<%='active' if controller_name == 'hps' %>">
                         <a href="/hps">
                             <i class="ti-view-list-alt"></i>
@@ -65,7 +69,7 @@
                         </a>
                 </li>        
                 <% end %>
-                <% if current_user.role == 'cetak_genteng' %> 
+                <% if ['rendam', 'cetak_genteng', 'cetak_blok'].include?(current_user.role) %>
                   <li class="<%='active' if controller_name == 'cetak_gtgs' %>">
                         <a href="/cetak_gtgs">
                             <i class="ti-view-list-alt"></i>
@@ -81,7 +85,7 @@
                         </a>
                 </li>        
                 <% end %>
-<% if current_user.role == 'rendam_genteng' %> 
+            <% if ['rendam_genteng', 'gosok_genteng'].include?(current_user.role) %>
                 <li class="<%='active' if controller_name == 'rendams' %>">
                         <a href="/rendams">
                             <i class="ti-view-list-alt"></i>
@@ -89,7 +93,7 @@
                         </a>
                 </li>        
                 <% end %>
-                <% if current_user.role == 'gosok_genteng' %> 
+                <% if ['cat_genteng', 'gosok_genteng', 'cat_blok'].include?(current_user.role) %>
                 <li class="<%='active' if controller_name == 'gosoks' %>">
                         <a href="/gosoks">
                             <i class="ti-view-list-alt"></i>
@@ -97,7 +101,7 @@
                         </a>
                 </li>       
                 <% end %> 
-                <% if current_user.role == 'cat_genteng' %> 
+                <% if current_user.role == 'cat_genteng' || current_user.role == 'cat_blok' %> 
                 <li class="<%='active' if controller_name == 'cat_gtgs' %>">
                         <a href="/cat_gtgs">
                             <i class="ti-view-list-alt"></i>
@@ -136,7 +140,7 @@
                     <div class="col-md-12">
                         <p class="notice"><%= notice %></p>
                         <p class="alert"><%= alert %></p>
-                        <% unless controller_name == "dashboard" %>
+                        <% if has_access_to_create %>
                           <div class="pull-right"><a class="btn btn-info btn-fill btn-wd" href="<%= controller_name %>/new">Tambah baru</a></div><div class="clearfix"></div><br/>
                         <% end %>
                         

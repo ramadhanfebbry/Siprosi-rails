@@ -28,7 +28,7 @@ class RendamsController < ApplicationController
 
     respond_to do |format|
       if @rendam.save
-        format.html { redirect_to @rendam, notice: 'Rendam was successfully created.' }
+        format.html { redirect_to rendams_url, notice: 'Rendam was successfully created.' }
         format.json { render :show, status: :created, location: @rendam }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RendamsController < ApplicationController
   def update
     respond_to do |format|
       if @rendam.update(rendam_params)
-        format.html { redirect_to @rendam, notice: 'Rendam was successfully updated.' }
+        format.html { redirect_to rendams_url, notice: 'Rendam was successfully updated.' }
         format.json { render :show, status: :ok, location: @rendam }
       else
         format.html { render :edit }

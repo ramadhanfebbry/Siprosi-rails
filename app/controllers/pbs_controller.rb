@@ -28,7 +28,7 @@ class PbsController < ApplicationController
 
     respond_to do |format|
       if @pb.save
-        format.html { redirect_to @pb, notice: 'Pb was successfully created.' }
+        format.html { redirect_to pbs_url, notice: 'Pb was successfully created.' }
         format.json { render :show, status: :created, location: @pb }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PbsController < ApplicationController
   def update
     respond_to do |format|
       if @pb.update(pb_params)
-        format.html { redirect_to @pb, notice: 'Pb was successfully updated.' }
+        format.html { redirect_to pbs_url, notice: 'Pb was successfully updated.' }
         format.json { render :show, status: :ok, location: @pb }
       else
         format.html { render :edit }

@@ -3,7 +3,7 @@
     <h4 class="title"><%= action_name.titleize %></h4>
   </div>
   <div class="content">
-    <%= form_for(@user) do |f| %>
+    <%= form_for(@user, (@user.new_record? ? {url: manage_users_path, method: :post} : {url: manage_user_path(@user), method: :put})) do |f| %>
     <div class="row">
         
         <div class="col-md-12">
@@ -32,7 +32,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control border-input" placeholder="Password" name="password" >
+            <%= f.password_field :password, :class => "form-control border-input" %>            
           </div>
         </div>
         

@@ -22,8 +22,8 @@
             <td><%= user.email %></td>
             <td><%= user.role %></td>
             <td>
-              <%= link_to "Edit", edit_user_path(user), class: "btn btn-info btn-fill btn-sm" %>
-              <%= link_to "Delete", user, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+              <%= link_to "Edit", edit_manage_user_path(user), class: "btn btn-info btn-fill btn-sm" %>
+              <%= link_to "Delete", manage_user_path(user), class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
               
             </td>
           </tr>              

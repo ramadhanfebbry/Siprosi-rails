@@ -28,7 +28,7 @@ class CetakGtgsController < ApplicationController
 
     respond_to do |format|
       if @cetak_gtg.save
-        format.html { redirect_to @cetak_gtg, notice: 'Cetak gtg was successfully created.' }
+        format.html { redirect_to cetak_gtgs_url, notice: 'Cetak gtg was successfully created.' }
         format.json { render :show, status: :created, location: @cetak_gtg }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CetakGtgsController < ApplicationController
   def update
     respond_to do |format|
       if @cetak_gtg.update(cetak_gtg_params)
-        format.html { redirect_to @cetak_gtg, notice: 'Cetak gtg was successfully updated.' }
+        format.html { redirect_to cetak_gtgs_url, notice: 'Cetak gtg was successfully updated.' }
         format.json { render :show, status: :ok, location: @cetak_gtg }
       else
         format.html { render :edit }

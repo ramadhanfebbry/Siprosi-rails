@@ -28,7 +28,7 @@ class IpsController < ApplicationController
 
     respond_to do |format|
       if @ip.save
-        format.html { redirect_to @ip, notice: 'Ip was successfully created.' }
+        format.html { redirect_to ips_url, notice: 'Ip was successfully created.' }
         format.json { render :show, status: :created, location: @ip }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class IpsController < ApplicationController
   def update
     respond_to do |format|
       if @ip.update(ip_params)
-        format.html { redirect_to @ip, notice: 'Ip was successfully updated.' }
+        format.html { redirect_to ips_url, notice: 'Ip was successfully updated.' }
         format.json { render :show, status: :ok, location: @ip }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class IpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ip_params
-      params.require(:ip).permit(:date, :plan_date, :item_name, :schedule_qty, :keterangan)
+      params.require(:ip).permit(:date, :pb_id)
     end
 end

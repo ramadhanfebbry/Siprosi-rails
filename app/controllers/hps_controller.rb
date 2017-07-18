@@ -28,7 +28,7 @@ class HpsController < ApplicationController
 
     respond_to do |format|
       if @hp.save
-        format.html { redirect_to @hp, notice: 'Hp was successfully created.' }
+        format.html { redirect_to hps_url, notice: 'Hp was successfully created.' }
         format.json { render :show, status: :created, location: @hp }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class HpsController < ApplicationController
   def update
     respond_to do |format|
       if @hp.update(hp_params)
-        format.html { redirect_to @hp, notice: 'Hp was successfully updated.' }
+        format.html { redirect_to hps_url, notice: 'Hp was successfully updated.' }
         format.json { render :show, status: :ok, location: @hp }
       else
         format.html { render :edit }

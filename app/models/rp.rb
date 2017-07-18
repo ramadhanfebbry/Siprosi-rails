@@ -1,3 +1,9 @@
 class Rp < ActiveRecord::Base
-  validates :item_name, :schedule_qty, :site, :date, :keterangan, :plan_date, presence: true
+  validates :item_name, :schedule_qty, :date, :keterangan, :plan_date, presence: true
+  belongs_to :barang
+  before_save :set_site
+
+  def set_site
+    self.site = self.barang.kategori_id.eql?(1) ? 'Genteng' : 'Blok'
+  end
 end

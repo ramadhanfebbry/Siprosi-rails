@@ -28,7 +28,7 @@ class CetakBloksController < ApplicationController
 
     respond_to do |format|
       if @cetak_blok.save
-        format.html { redirect_to @cetak_blok, notice: 'Cetak blok was successfully created.' }
+        format.html { redirect_to cetak_bloks_url, notice: 'Cetak blok was successfully created.' }
         format.json { render :show, status: :created, location: @cetak_blok }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CetakBloksController < ApplicationController
   def update
     respond_to do |format|
       if @cetak_blok.update(cetak_blok_params)
-        format.html { redirect_to @cetak_blok, notice: 'Cetak blok was successfully updated.' }
+        format.html { redirect_to cetak_bloks_url, notice: 'Cetak blok was successfully updated.' }
         format.json { render :show, status: :ok, location: @cetak_blok }
       else
         format.html { render :edit }
