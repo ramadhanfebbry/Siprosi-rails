@@ -7,12 +7,14 @@
     <table class="table table-striped">
       <thead>
         <th>ID</th>
-        <th>No. Cetak Gtg</th>        
+        <th>Cetak Genteng</th>        
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
-        <th>Keterangan</th>        
-        <th>Aksi</th>
+        <th>Keterangan</th>     
+        <% if current_user.role.eql?("rendam_genteng") %>   
+          <th>Aksi</th> 
+        <% end %>
       </thead>
       <tbody>
 <% @rendams.each do |rendam| %>
@@ -23,8 +25,9 @@
         <td><%= rendam.hasil %></td>
         <td><%= rendam.rusak %></td>
         <td><%= rendam.keterangan %></td>
-        <td><%= link_to 'Edit', edit_rendam_path(rendam), class: "btn btn-info btn-fill btn-sm" %>
-        <%= link_to 'Destroy', rendam, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+        <% if current_user.role.eql?("rendam_genteng") %>   
+          <td><%= link_to 'Edit', edit_rendam_path(rendam), class: "btn btn-info btn-fill btn-sm" %>
+        <% end%>
           </tr>              
         <%end%>
       </tbody>

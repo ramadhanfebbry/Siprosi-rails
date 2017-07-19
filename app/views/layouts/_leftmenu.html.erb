@@ -61,7 +61,7 @@
                         </a>
                 </li>
                 <% end %>
-                <% if current_user.role == 'cetak_blok' %> 
+                <% if current_user.role == 'cetak_blok' || current_user.role == 'cat_blok' %> 
         <li class="<%='active' if controller_name == 'cetak_bloks' %>">
                         <a href="/cetak_bloks">
                             <i class="ti-view-list-alt"></i>
@@ -69,7 +69,7 @@
                         </a>
                 </li>        
                 <% end %>
-                <% if ['rendam', 'cetak_genteng', 'cetak_blok'].include?(current_user.role) %>
+                <% if ['rendam_genteng', 'cetak_genteng'].include?(current_user.role) %>
                   <li class="<%='active' if controller_name == 'cetak_gtgs' %>">
                         <a href="/cetak_gtgs">
                             <i class="ti-view-list-alt"></i>
@@ -77,7 +77,7 @@
                         </a>
                 </li>       
                 <% end %> 
-                <% if current_user.role == 'cat_blok' %> 
+                <% if current_user.role == 'cat_blok' || current_user.role == 'produksi'%> 
                 <li class="<%='active' if controller_name == 'cat_bloks' %>">
                         <a href="/cat_bloks">
                             <i class="ti-view-list-alt"></i>
@@ -93,7 +93,7 @@
                         </a>
                 </li>        
                 <% end %>
-                <% if ['cat_genteng', 'gosok_genteng', 'cat_blok'].include?(current_user.role) %>
+                <% if ['cat_genteng', 'gosok_genteng'].include?(current_user.role) %>
                 <li class="<%='active' if controller_name == 'gosoks' %>">
                         <a href="/gosoks">
                             <i class="ti-view-list-alt"></i>
@@ -101,11 +101,20 @@
                         </a>
                 </li>       
                 <% end %> 
-                <% if current_user.role == 'cat_genteng' || current_user.role == 'cat_blok' %> 
+                <% if current_user.role == 'cat_genteng' || current_user.role == 'produksi'  %> 
                 <li class="<%='active' if controller_name == 'cat_gtgs' %>">
                         <a href="/cat_gtgs">
                             <i class="ti-view-list-alt"></i>
                             <p>Cat Genteng</p>
+                        </a>
+                </li>        
+                <% end %>
+
+                 <% if current_user.role == 'produksi'  %> 
+                <li class="<%='active' if controller_name == 'dashboard' && page_name == 'laporan' %>">
+                        <a href="/laporan">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Laporan</p>
                         </a>
                 </li>        
                 <% end %>

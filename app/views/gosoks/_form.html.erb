@@ -28,7 +28,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Rendam</label>
-            <%= f.select :rendam_id, Rendam.all.map { |value| [ key, value ] }, {}, :class => "form-control border-input" %>
+            <%= f.select :rendam_id, Rendam.all.map { |c| [ c.id, c.id ] }, {}, :class => "form-control border-input" %>
           </div>
         </div>    
         <div class="col-md-6">

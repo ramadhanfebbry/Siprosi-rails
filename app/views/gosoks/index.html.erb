@@ -12,7 +12,9 @@
         <th>Hasil</th>
         <th>Rusak</th>
         <th>Keterangan</th>        
+        <% if current_user.role.eql?("gosok_genteng") %>   
         <th>Aksi</th>
+        <% end %>
       </thead>
       <tbody>
         <% @gosoks.each do |gosok| %>
@@ -23,8 +25,10 @@
           <td><%= gosok.hasil %></td>
           <td><%= gosok.rusak %></td>
           <td><%= gosok.keterangan %></td>
-          <td><%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
-            <%= link_to 'Destroy', gosok, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+          <td>
+          <% if current_user.role.eql?("gosok_genteng") %>   
+            <%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
+          <% end %>
           </td>
         </tr>              
         <%end%>

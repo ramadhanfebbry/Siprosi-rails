@@ -11,8 +11,10 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
-        <th>Keterangan</th>        
+        <th>Keterangan</th>     
+        <% if current_user.role.eql?("cetak_blok") %>   
         <th>Aksi</th>
+        <% end %>
       </thead>
       <tbody>
         <% @cetak_bloks.each do |cetak_blok| %>
@@ -23,10 +25,12 @@
           <td><%= cetak_blok.hasil %></td>
           <td><%= cetak_blok.rusak %></td>
           <td><%= cetak_blok.keterangan %></td>
+          <% if current_user.role.eql?("cetak_blok") %>   
           <td>
             <%= link_to 'Edit', edit_cetak_blok_path(cetak_blok), class: "btn btn-info btn-fill btn-sm" %>
-            <%= link_to 'Destroy', cetak_blok, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %>
+            
           </td>
+          <% end %>
         </tr>              
         <%end%>
       </tbody>

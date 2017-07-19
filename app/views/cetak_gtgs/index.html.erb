@@ -12,7 +12,9 @@
         <th>Hasil</th>
         <th>Rusak</th>
         <th>Keterangan</th>        
+        <% if current_user.role.eql?("cetak_genteng") %>   
         <th>Aksi</th>
+        <% end %>
       </thead>
       <tbody>
         <% @cetak_gtgs.each do |cetak_gtg| %>
@@ -23,9 +25,11 @@
           <td><%= cetak_gtg.hasil %></td>
           <td><%= cetak_gtg.rusak %></td>
           <td><%= cetak_gtg.keterangan %></td>
+          <% if current_user.role.eql?("cetak_genteng") %>   
           <td>
             <%= link_to 'Edit', edit_cetak_gtg_path(cetak_gtg), class: "btn btn-info btn-fill btn-sm" %>            
           </td>
+          <% end %>
         </tr>              
         <%end%>
       </tbody>
