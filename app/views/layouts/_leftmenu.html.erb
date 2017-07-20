@@ -111,7 +111,7 @@
                 <% end %>
 
                  <% if current_user.role == 'produksi'  %> 
-                <li class="<%='active' if controller_name == 'dashboard' && page_name == 'laporan' %>">
+                <li class="<%='active' if controller_name == 'dashboard' && action_name == 'laporan' %>">
                         <a href="/laporan">
                             <i class="ti-view-list-alt"></i>
                             <p>Laporan</p>

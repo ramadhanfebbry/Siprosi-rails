@@ -61,6 +61,7 @@ GEM
     execjs (2.7.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    hash-deep-merge (0.1.1)
     i18n (0.8.5)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -70,6 +71,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.6)
+    lazy_high_charts (1.5.8)
+      hash-deep-merge
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
@@ -80,6 +83,7 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
+    mysql2 (0.4.8)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
@@ -161,6 +165,8 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  lazy_high_charts
+  mysql2
   pg
   rails (= 4.2.5.2)
   sass-rails (~> 5.0)

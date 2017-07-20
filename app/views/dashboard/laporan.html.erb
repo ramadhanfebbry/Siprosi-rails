@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <div class="btn-group btn-group-sm">
+  <button type="button" class="btn btn-primary btn-fill" id="btn-laporan">Laporan</button>
+  <button type="button" class="btn" id="btn-diagram">Diagram</button>  
+</div>
+<div class="clearfix"></div>
+<br>
+<div id="table-laporan">
+Periode dari tanggal: <input type="text" id="datepicker" value="<%= params[:start_date] %>"> 
+<img class="ui-datepicker-trigger" src="https://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Select date" title="Select date">
+- <input type="text" id="datepicker2" value="<%= params[:end_date] %>"> 
+<img class="ui-datepicker-trigger" src="https://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Select date" title="Select date">
+
+<select class="tipe_laporan">
+  <option value="Semua">Semua</option>
+  <option value="Genteng" <%= "selected" if params[:tipe]=='Genteng' %>>Genteng</option>
+  <option value="Blok"  <%= "selected" if params[:tipe]=='Blok' %>>Block</option>
+</select>
+
+<a href="javascript:void(0)" class="btn btn-info btn-sm btn-cari btn-fill">Cari</a>
+<a href="javascript:void(0)" class="btn btn-success btn-sm btn-print btn-fill">Print</a>
+<div class="clearfix"></div>
+
+<br>
+
+<div class="card">  
+  <div class="content table-responsive table-full-width">  
+    <table class="table table-striped">
+      <thead>
+        <th>No. RP</th>
+        <th>Tgl. RP</th>
+        <th>No. PB</th>
+        <th>Tgl. PB</th>
+        <th>No. IP</th>
+        <th>Tgl. IP</th>
+        <th>Kode Barang</th>
+        <th>Nama Barang</th>
+        <th>Tgl Selesai</th>        
+        <th>Hasil Produksi</th>        
+        <th>Site</th>
+        
+        
+        
+      </thead>
+      <tbody>
+        <% @hps.each do |hp| %>
+        <tr>
+          <td><%= hp.rp.id %></td>   
+          <td><%= hp.rp.date %></td>   
+          <td><%= hp.ip.pb.id %></td>   
+          <td><%= hp.ip.pb.date %></td>   
+          <td><%= hp.ip.id %></td>   
+          <td><%= hp.ip.date %></td>   
+          <td><%= hp.rp.barang.id_barang %></td>   
+          <td><%= hp.rp.item_name %></td>   
+          <td><%= hp.created_at.strftime("%d/%m/%Y") %></td>   
+          <td><%= hp.hasil_produksi %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.rp.site %></td>                  
+        </tr>              
+        <%end%>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+</div>
+<div id="chartcontainer" width='100%' style="display: none;">
+    <%= high_chart("some_id", @chart) %>
+  </div>
+<script>
+  $( function() {
+    $( "#datepicker, #datepicker2" ).datepicker();
+    $(".btn-cari").click(function(){
+      window.location = "/laporan?&tipe="+$(".tipe_laporan").val()+"&start_date="+$("#datepicker").val()+"&end_date="+$("#datepicker2").val();
+    });
+    $(".btn-print").click(function(){
+      window.open("/laporan_print?tipe="+$(".tipe_laporan").val()+"&start_date="+$("#datepicker").val()+"&end_date="+$("#datepicker2").val(), '_blank');
+
+    });
+    $("#btn-laporan").click(function(){
+      $(this).attr("class", "btn btn-primary btn-fill");
+      $("#btn-diagram").attr("class", "btn");
+      $("#chartcontainer").hide();
+      $("#table-laporan").show();
+    });
+
+    $("#btn-diagram").click(function(){
+      $(this).attr("class", "btn btn-primary btn-fill");
+      $("#btn-laporan").attr("class", "btn");
+      $("#chartcontainer").show();
+      $("#table-laporan").hide();
+    });
+  } );
+</script>

@@ -4,7 +4,7 @@ class HpsController < ApplicationController
   # GET /hps
   # GET /hps.json
   def index
-    @hps = Hp.all
+      @hps = Hp.all   
   end
 
   # GET /hps/1
