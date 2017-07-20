@@ -9,7 +9,8 @@ module ApplicationHelper
       (controller_name.eql?('rendams') && ['rendam_genteng'].include?(current_user.role)) ||
       (controller_name.eql?('gosoks') && ['gosok_genteng'].include?(current_user.role)) ||
       (controller_name.eql?('cat_gtgs') && ['cat_genteng'].include?(current_user.role)) ||
-      (controller_name.eql?('cat_bloks') && ['cat_blok'].include?(current_user.role))
+      (controller_name.eql?('cat_bloks') && ['cat_blok'].include?(current_user.role)) ||
+      (controller_name.eql?('manage_users') && ['admin'].include?(current_user.role))
     end
   end
 end
