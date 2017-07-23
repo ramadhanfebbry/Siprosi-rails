@@ -18,7 +18,7 @@ class CatGtgsControllerTest < ActionController::TestCase
 
   test "should create cat_gtg" do
     assert_difference('CatGtg.count') do
-      post :create, cat_gtg: { date: @cat_gtg.date, gosok_id: @cat_gtg.gosok_id, hasil: @cat_gtg.hasil, keterangan: @cat_gtg.keterangan, rusak: @cat_gtg.rusak }
+      post :create, cat_gtg: { date: @cat_gtg.created_at.to_date, gosok_id: @cat_gtg.gosok_id, hasil: @cat_gtg.hasil, keterangan: @cat_gtg.keterangan, rusak: @cat_gtg.rusak }
     end
 
     assert_redirected_to cat_gtg_path(assigns(:cat_gtg))
@@ -35,7 +35,7 @@ class CatGtgsControllerTest < ActionController::TestCase
   end
 
   test "should update cat_gtg" do
-    patch :update, id: @cat_gtg, cat_gtg: { date: @cat_gtg.date, gosok_id: @cat_gtg.gosok_id, hasil: @cat_gtg.hasil, keterangan: @cat_gtg.keterangan, rusak: @cat_gtg.rusak }
+    patch :update, id: @cat_gtg, cat_gtg: { date: @cat_gtg.created_at.to_date, gosok_id: @cat_gtg.gosok_id, hasil: @cat_gtg.hasil, keterangan: @cat_gtg.keterangan, rusak: @cat_gtg.rusak }
     assert_redirected_to cat_gtg_path(assigns(:cat_gtg))
   end
 

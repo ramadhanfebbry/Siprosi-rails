@@ -22,9 +22,9 @@
         <tr>
           <td><%= rp.id %></td>
           <td><%= rp.schedule_qty %></td>
-          <td><%= rp.item_name %></td>
+          <td><%= rp.barang.id_barang %></td>
           <td><%= rp.site %></td>
-          <td><%= rp.date %></td>
+          <td><%= rp.created_at.to_date %></td>
           <td><%= rp.keterangan %></td>
           <td><%= rp.plan_date %></td>
           <% if current_user.role == 'ppic' %> 

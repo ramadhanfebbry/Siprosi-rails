@@ -16,7 +16,7 @@
         <tr>
           <td><%= @hp.cat_blok.cetak_blok.id %></td>
           <td><%= @hp.cat_blok.cetak_blok.ip_id %></td>
-          <td><%= @hp.cat_blok.cetak_blok.date %></td>
+          <td><%= @hp.cat_blok.cetak_blok.created_at.to_date %></td>
           <td><%= @hp.cat_blok.cetak_blok.hasil %></td>
           <td><%= @hp.cat_blok.cetak_blok.rusak %></td>
           <td><%= @hp.cat_blok.cetak_blok.keterangan %></td>       
@@ -44,7 +44,7 @@
       <tbody>
         <tr>
           <td><%= @hp.cat_blok.id %></td>
-          <td><%= @hp.cat_blok.date %></td>
+          <td><%= @hp.cat_blok.created_at.to_date %></td>
           <td><%= @hp.cat_blok.hasil %></td>
           <td><%= @hp.cat_blok.rusak %></td>
           <td><%= @hp.cat_blok.keterangan %></td>       

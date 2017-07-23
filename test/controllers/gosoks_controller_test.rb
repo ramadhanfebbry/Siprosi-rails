@@ -18,7 +18,7 @@ class GosoksControllerTest < ActionController::TestCase
 
   test "should create gosok" do
     assert_difference('Gosok.count') do
-      post :create, gosok: { date: @gosok.date, hasil: @gosok.hasil, keterangan: @gosok.keterangan, rendam_id: @gosok.rendam_id, rusak: @gosok.rusak }
+      post :create, gosok: { date: @gosok.created_at.to_date, hasil: @gosok.hasil, keterangan: @gosok.keterangan, rendam_id: @gosok.rendam_id, rusak: @gosok.rusak }
     end
 
     assert_redirected_to gosok_path(assigns(:gosok))
@@ -35,7 +35,7 @@ class GosoksControllerTest < ActionController::TestCase
   end
 
   test "should update gosok" do
-    patch :update, id: @gosok, gosok: { date: @gosok.date, hasil: @gosok.hasil, keterangan: @gosok.keterangan, rendam_id: @gosok.rendam_id, rusak: @gosok.rusak }
+    patch :update, id: @gosok, gosok: { date: @gosok.created_at.to_date, hasil: @gosok.hasil, keterangan: @gosok.keterangan, rendam_id: @gosok.rendam_id, rusak: @gosok.rusak }
     assert_redirected_to gosok_path(assigns(:gosok))
   end
 

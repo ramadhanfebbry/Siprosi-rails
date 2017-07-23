@@ -18,7 +18,7 @@ class PbsControllerTest < ActionController::TestCase
 
   test "should create pb" do
     assert_difference('Pb.count') do
-      post :create, pb: { date: @pb.date, rp_id: @pb.rp_id, status: @pb.status }
+      post :create, pb: { date: @pb.created_at.to_date, rp_id: @pb.rp_id, status: @pb.status }
     end
 
     assert_redirected_to pb_path(assigns(:pb))
@@ -35,7 +35,7 @@ class PbsControllerTest < ActionController::TestCase
   end
 
   test "should update pb" do
-    patch :update, id: @pb, pb: { date: @pb.date, rp_id: @pb.rp_id, status: @pb.status }
+    patch :update, id: @pb, pb: { date: @pb.created_at.to_date, rp_id: @pb.rp_id, status: @pb.status }
     assert_redirected_to pb_path(assigns(:pb))
   end
 

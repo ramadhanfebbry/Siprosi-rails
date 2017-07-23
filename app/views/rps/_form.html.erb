@@ -29,28 +29,17 @@
             <label>Schedule Qty</label>            
             <%= f.number_field :schedule_qty, :class => "form-control border-input" %>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Item name</label>
-            <%= f.text_field :item_name, :class => "form-control border-input" %>
-          </div>
-        </div>
-        
-      </div>
-
- <div class="row">
-        
+        </div>        
         <div class="col-md-6">
           <div class="form-group">
             <label>Barang</label>
-            <%= f.select :barang_id, Barang.all.map { |c| [ "#{c.type_barang} (#{c.id_barang})", c.id ] }, {}, :class => "form-control border-input" %>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Date (DD/MM/YYYY)</label>
-            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+            <%#= f.select :barang_id, Barang.all.map { |c| [ "#{c.type_barang} (#{c.id_barang})", c.id ] }, {}, :class => "form-control border-input" %>
+            <br>
+            <%= f.select :barang_id,
+              Barang.all.map { |c| [ "#{c.type_barang} (#{c.id_barang})", c.id ] },
+                           { include_blank: true },
+                           { class: 'chosen-select form-control border-input' }
+            %>
           </div>
         </div>
         

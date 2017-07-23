@@ -19,7 +19,7 @@
         <tr>
           <td><%= ip.id %></td>          
           <td><%= ip.pb_id %></td>        
-          <td><%= ip.date %></td>        
+          <td><%= ip.created_at.to_date %></td>        
           <% if current_user.role.eql?('produksi') %>
             <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
           <% end %>

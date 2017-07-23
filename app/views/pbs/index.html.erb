@@ -18,7 +18,7 @@
             <td><%= pb.id %></td>
             
             <td><%= pb.rp_id %></td>
-            <td><%= pb.date %></td>
+            <td><%= pb.created_at.to_date %></td>
             <td><%= pb.status %></td>
             <td>
               <%= link_to "Edit", edit_pb_path(pb), class: "btn btn-info btn-fill btn-sm" %>              

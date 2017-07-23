@@ -18,7 +18,7 @@ class CetakGtgsControllerTest < ActionController::TestCase
 
   test "should create cetak_gtg" do
     assert_difference('CetakGtg.count') do
-      post :create, cetak_gtg: { date: @cetak_gtg.date, hasil: @cetak_gtg.hasil, ip_id: @cetak_gtg.ip_id, keterangan: @cetak_gtg.keterangan, rusak: @cetak_gtg.rusak }
+      post :create, cetak_gtg: { date: @cetak_gtg.created_at.to_date, hasil: @cetak_gtg.hasil, ip_id: @cetak_gtg.ip_id, keterangan: @cetak_gtg.keterangan, rusak: @cetak_gtg.rusak }
     end
 
     assert_redirected_to cetak_gtg_path(assigns(:cetak_gtg))
@@ -35,7 +35,7 @@ class CetakGtgsControllerTest < ActionController::TestCase
   end
 
   test "should update cetak_gtg" do
-    patch :update, id: @cetak_gtg, cetak_gtg: { date: @cetak_gtg.date, hasil: @cetak_gtg.hasil, ip_id: @cetak_gtg.ip_id, keterangan: @cetak_gtg.keterangan, rusak: @cetak_gtg.rusak }
+    patch :update, id: @cetak_gtg, cetak_gtg: { date: @cetak_gtg.created_at.to_date, hasil: @cetak_gtg.hasil, ip_id: @cetak_gtg.ip_id, keterangan: @cetak_gtg.keterangan, rusak: @cetak_gtg.rusak }
     assert_redirected_to cetak_gtg_path(assigns(:cetak_gtg))
   end
 

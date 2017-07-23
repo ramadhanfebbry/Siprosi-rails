@@ -18,7 +18,7 @@ class CetakBloksControllerTest < ActionController::TestCase
 
   test "should create cetak_blok" do
     assert_difference('CetakBlok.count') do
-      post :create, cetak_blok: { date: @cetak_blok.date, hasil: @cetak_blok.hasil, ip_id: @cetak_blok.ip_id, keterangan: @cetak_blok.keterangan, rusak: @cetak_blok.rusak }
+      post :create, cetak_blok: { date: @cetak_blok.created_at.to_date, hasil: @cetak_blok.hasil, ip_id: @cetak_blok.ip_id, keterangan: @cetak_blok.keterangan, rusak: @cetak_blok.rusak }
     end
 
     assert_redirected_to cetak_blok_path(assigns(:cetak_blok))
@@ -35,7 +35,7 @@ class CetakBloksControllerTest < ActionController::TestCase
   end
 
   test "should update cetak_blok" do
-    patch :update, id: @cetak_blok, cetak_blok: { date: @cetak_blok.date, hasil: @cetak_blok.hasil, ip_id: @cetak_blok.ip_id, keterangan: @cetak_blok.keterangan, rusak: @cetak_blok.rusak }
+    patch :update, id: @cetak_blok, cetak_blok: { date: @cetak_blok.created_at.to_date, hasil: @cetak_blok.hasil, ip_id: @cetak_blok.ip_id, keterangan: @cetak_blok.keterangan, rusak: @cetak_blok.rusak }
     assert_redirected_to cetak_blok_path(assigns(:cetak_blok))
   end
 

@@ -10,6 +10,7 @@
 
 
     <!-- Bootstrap core CSS     -->
+        <link href="/assets/application.css" rel="stylesheet" />
     <link href="/assets/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
@@ -50,7 +51,7 @@
     <%= render 'layouts/leftmenu' if user_signed_in?  %>
     <%= yield %>
 <script type="text/javascript">
-    $('.datepicker').datepicker();
+    $('datepicker').datepicker();
 </script>
 </body>
 </html>

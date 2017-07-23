@@ -18,7 +18,7 @@ class RendamsControllerTest < ActionController::TestCase
 
   test "should create rendam" do
     assert_difference('Rendam.count') do
-      post :create, rendam: { cetak_gtg_id: @rendam.cetak_gtg_id, date: @rendam.date, hasil: @rendam.hasil, keterangan: @rendam.keterangan, rusak: @rendam.rusak }
+      post :create, rendam: { cetak_gtg_id: @rendam.cetak_gtg_id, date: @rendam.created_at.to_date, hasil: @rendam.hasil, keterangan: @rendam.keterangan, rusak: @rendam.rusak }
     end
 
     assert_redirected_to rendam_path(assigns(:rendam))
@@ -35,7 +35,7 @@ class RendamsControllerTest < ActionController::TestCase
   end
 
   test "should update rendam" do
-    patch :update, id: @rendam, rendam: { cetak_gtg_id: @rendam.cetak_gtg_id, date: @rendam.date, hasil: @rendam.hasil, keterangan: @rendam.keterangan, rusak: @rendam.rusak }
+    patch :update, id: @rendam, rendam: { cetak_gtg_id: @rendam.cetak_gtg_id, date: @rendam.created_at.to_date, hasil: @rendam.hasil, keterangan: @rendam.keterangan, rusak: @rendam.rusak }
     assert_redirected_to rendam_path(assigns(:rendam))
   end
 

@@ -29,12 +29,7 @@
           <%= f.select :ip_id, Ip.blok_site.map { |c| [ "IP-#{c.id}", c.id ] }, {}, :class => "form-control border-input" %>
           </div>
         </div>    
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Date (DD/MM/YYYY)</label>
-            <%= f.text_field :date, :class => "form-control border-input datepicker" %>
-          </div>
-        </div>
+        
         
       </div>
 

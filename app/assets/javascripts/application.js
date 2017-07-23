@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require highcharts/highcharts
 //= require highcharts/highcharts-more
+//= require chosen-jquery
+//= require rps
+
 

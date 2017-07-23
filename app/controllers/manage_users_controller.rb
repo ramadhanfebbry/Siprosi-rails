@@ -33,8 +33,12 @@ class ManageUsersController < ApplicationController
 
   def update
     set_user_params
+    params = user_params
+    if params[:password].blank?
+        params.delete("password")
+    end
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(params)
         format.html { redirect_to manage_users_url, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else

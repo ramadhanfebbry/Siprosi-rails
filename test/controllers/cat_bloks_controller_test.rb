@@ -18,7 +18,7 @@ class CatBloksControllerTest < ActionController::TestCase
 
   test "should create cat_blok" do
     assert_difference('CatBlok.count') do
-      post :create, cat_blok: { cetak_blok_id: @cat_blok.cetak_blok_id, date: @cat_blok.date, hasil: @cat_blok.hasil, keterangan: @cat_blok.keterangan, rusak: @cat_blok.rusak }
+      post :create, cat_blok: { cetak_blok_id: @cat_blok.cetak_blok_id, date: @cat_blok.created_at.to_date, hasil: @cat_blok.hasil, keterangan: @cat_blok.keterangan, rusak: @cat_blok.rusak }
     end
 
     assert_redirected_to cat_blok_path(assigns(:cat_blok))
@@ -35,7 +35,7 @@ class CatBloksControllerTest < ActionController::TestCase
   end
 
   test "should update cat_blok" do
-    patch :update, id: @cat_blok, cat_blok: { cetak_blok_id: @cat_blok.cetak_blok_id, date: @cat_blok.date, hasil: @cat_blok.hasil, keterangan: @cat_blok.keterangan, rusak: @cat_blok.rusak }
+    patch :update, id: @cat_blok, cat_blok: { cetak_blok_id: @cat_blok.cetak_blok_id, date: @cat_blok.created_at.to_date, hasil: @cat_blok.hasil, keterangan: @cat_blok.keterangan, rusak: @cat_blok.rusak }
     assert_redirected_to cat_blok_path(assigns(:cat_blok))
   end
 
