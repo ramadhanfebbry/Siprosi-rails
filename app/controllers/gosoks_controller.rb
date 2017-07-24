@@ -69,6 +69,6 @@ class GosoksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gosok_params
-      params.require(:gosok).permit(:rendam_id, :date, :hasil, :rusak, :keterangan)
+      params.require(:gosok).permit(:rendam_id , :hasil, :rusak, :keterangan)
     end
 end

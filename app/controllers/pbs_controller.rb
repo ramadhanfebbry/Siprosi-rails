@@ -69,6 +69,6 @@ class PbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pb_params
-      params.require(:pb).permit(:rp_id, :date, :status)
+      params.require(:pb).permit(:rp_id , :status)
     end
 end

@@ -69,6 +69,6 @@ class CatBloksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_blok_params
-      params.require(:cat_blok).permit(:cetak_blok_id, :date, :hasil, :rusak, :keterangan)
+      params.require(:cat_blok).permit(:cetak_blok_id , :hasil, :rusak, :keterangan)
     end
 end

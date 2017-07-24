@@ -1,5 +1,5 @@
 class Rp < ActiveRecord::Base
-  validates :item_name, :schedule_qty, :date, :keterangan, :plan_date, presence: true
+  validates :schedule_qty , :keterangan, :plan_date, presence: true
   belongs_to :barang
   before_save :set_site
   has_many :rp, dependent: :destroy

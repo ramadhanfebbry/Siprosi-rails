@@ -69,6 +69,6 @@ class RendamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rendam_params
-      params.require(:rendam).permit(:cetak_gtg_id, :date, :hasil, :rusak, :keterangan)
+      params.require(:rendam).permit(:cetak_gtg_id , :hasil, :rusak, :keterangan)
     end
 end

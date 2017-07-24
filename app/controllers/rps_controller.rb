@@ -69,6 +69,6 @@ class RpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rp_params
-      params.require(:rp).permit(:schedule_qty, :item_name, :site, :date, :keterangan, :plan_date, :barang_id)
+      params.require(:rp).permit(:schedule_qty, :site , :keterangan, :plan_date, :barang_id)
     end
 end

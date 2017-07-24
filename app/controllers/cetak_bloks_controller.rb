@@ -69,6 +69,6 @@ class CetakBloksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cetak_blok_params
-      params.require(:cetak_blok).permit(:ip_id, :date, :hasil, :rusak, :keterangan)
+      params.require(:cetak_blok).permit(:ip_id , :hasil, :rusak, :keterangan)
     end
 end

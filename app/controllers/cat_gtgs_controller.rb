@@ -69,6 +69,6 @@ class CatGtgsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cat_gtg_params
-      params.require(:cat_gtg).permit(:gosok_id, :date, :hasil, :rusak, :keterangan)
+      params.require(:cat_gtg).permit(:gosok_id , :hasil, :rusak, :keterangan)
     end
 end
