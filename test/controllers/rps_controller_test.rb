@@ -18,7 +18,7 @@ class RpsControllerTest < ActionController::TestCase
 
   test "should create rp" do
     assert_difference('Rp.count') do
-      post :create, rp: { date: @rp.created_at.to_date, item_name: @rp.barand.id_barang, ketengaran: @rp.ketengaran, plan_date: @rp.plan_date, schedule_qty: @rp.schedule_qty, site: @rp.site }
+      post :create, rp: { date: @rp.created_at.to_date, item_name: @rp.barang.id_barang, ketengaran: @rp.ketengaran, plan_date: @rp.plan_date, schedule_qty: @rp.schedule_qty, site: @rp.site }
     end
 
     assert_redirected_to rp_path(assigns(:rp))
@@ -35,7 +35,7 @@ class RpsControllerTest < ActionController::TestCase
   end
 
   test "should update rp" do
-    patch :update, id: @rp, rp: { date: @rp.created_at.to_date, item_name: @rp.barand.id_barang, ketengaran: @rp.ketengaran, plan_date: @rp.plan_date, schedule_qty: @rp.schedule_qty, site: @rp.site }
+    patch :update, id: @rp, rp: { date: @rp.created_at.to_date, item_name: @rp.barang.id_barang, ketengaran: @rp.ketengaran, plan_date: @rp.plan_date, schedule_qty: @rp.schedule_qty, site: @rp.site }
     assert_redirected_to rp_path(assigns(:rp))
   end
 

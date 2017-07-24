@@ -41,8 +41,7 @@
         <th>Tgl. PB</th>
         <th>No. IP</th>
         <th>Tgl. IP</th>
-        <th>Kode Barang</th>
-        <th>Nama Barang</th>
+        <th>Item Name</th>
         <th>Tgl Selesai</th>        
         <th>Hasil Produksi</th>        
         <th>Site</th>
@@ -59,8 +58,7 @@
           <td><%= hp.ip.pb.created_at.to_date %></td>   
           <td><%= hp.ip.id %></td>   
           <td><%= hp.ip.created_at.to_date %></td>   
-          <td><%= hp.rp.barang.id_barang %></td>   
-          <td><%= hp.rp.barand.id_barang %></td>   
+          <td><%= hp.rp.barang.id_barang %></td>             
           <td><%= hp.created_at.strftime("%d/%m/%Y") %></td>   
           <td><%= hp.hasil_produksi %> <%= hp.rp.barang.unit %></td>
           <td><%= hp.rp.site %></td>                  
