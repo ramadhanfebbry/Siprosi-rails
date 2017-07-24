@@ -28,14 +28,13 @@
           <label>Instruksi Produksi</label>
           <%= f.select :ip_id, Ip.genteng_site.map { |c| [ "IP-#{c.id}", c.id ] }, {}, :class => "form-control border-input" %>
         </div>
-      </div>    
+      </div>          
       <div class="col-md-6">
         <div class="form-group">
-          <label>Date (DD/MM/YYYY)</label>
-          <%= f.text_field :date, :class => "form-control border-input datepicker" %>
+          <label>Keterangan</label>
+          <%= f.text_field :keterangan, :class => "form-control border-input" %>
         </div>
       </div>
-
     </div>
 
 
@@ -51,14 +50,6 @@
         <div class="form-group">
           <label>Rusak</label>
           <%= f.number_field :rusak, :class => "form-control border-input" %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label>Keterangan</label>
-          <%= f.text_field :keterangan, :class => "form-control border-input" %>
         </div>
       </div>
     </div>

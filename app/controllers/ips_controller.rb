@@ -69,6 +69,6 @@ class IpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ip_params
-      params.require(:ip).permit(:date, :pb_id)
+      params.require(:ip).permit(:pb_id)
     end
 end

@@ -1,5 +1,5 @@
 class Ip < ActiveRecord::Base
-  validates :date, :pb_id, presence: true
+  validates :pb_id, presence: true
   belongs_to :pb
   has_many :cetak_gtgs, dependent: :destroy
   has_many :cetak_bloks, dependent: :destroy

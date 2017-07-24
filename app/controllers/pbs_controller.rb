@@ -15,6 +15,7 @@ class PbsController < ApplicationController
   # GET /pbs/new
   def new
     @pb = Pb.new
+    @pb.rp_id = params[:rp_id]
   end
 
   # GET /pbs/1/edit

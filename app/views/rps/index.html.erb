@@ -13,7 +13,7 @@
         <th>Date</th>
         <th>Keterangan</th>
         <th>Plan date</th>
-        <% if current_user.role == 'ppic' %> 
+        <% if current_user.role == 'ppic' || current_user.role == 'produksi'%> 
         <th>Aksi</th>
         <% end %>
       </thead>
@@ -31,6 +31,10 @@
           <td>
             <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
             <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %> 
+          </td>    
+          <% elsif current_user.role == 'produksi' %> 
+          <td>
+            <%= link_to 'Tambah PB', new_pb_path(rp_id: rp.id), class: "btn btn-info btn-fill btn-sm" %>            
           </td>           
           <% end %>
         </tr>              
