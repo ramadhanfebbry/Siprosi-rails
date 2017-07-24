@@ -18,7 +18,7 @@ class IpsControllerTest < ActionController::TestCase
 
   test "should create ip" do
     assert_difference('Ip.count') do
-      post :create, ip: { date: @ip.created_at.to_date, item_name: @ip.item_name, keterangan: @ip.keterangan, plan_date: @ip.plan_date, schedule_qty: @ip.schedule_qty }
+      post :create, ip: { date: @ip.created_at.to_date, item_name: @ip.barand.id_barang, keterangan: @ip.keterangan, plan_date: @ip.plan_date, schedule_qty: @ip.schedule_qty }
     end
 
     assert_redirected_to ip_path(assigns(:ip))
@@ -35,7 +35,7 @@ class IpsControllerTest < ActionController::TestCase
   end
 
   test "should update ip" do
-    patch :update, id: @ip, ip: { date: @ip.created_at.to_date, item_name: @ip.item_name, keterangan: @ip.keterangan, plan_date: @ip.plan_date, schedule_qty: @ip.schedule_qty }
+    patch :update, id: @ip, ip: { date: @ip.created_at.to_date, item_name: @ip.barand.id_barang, keterangan: @ip.keterangan, plan_date: @ip.plan_date, schedule_qty: @ip.schedule_qty }
     assert_redirected_to ip_path(assigns(:ip))
   end
 
