@@ -69,6 +69,6 @@ class HpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hp_params
-      params.require(:hp).permit(:ip_id, :rp_id, :hasil_produksi, :target_produksi)
+      params.require(:hp).permit(:ip_id, :rp_id)
     end
 end

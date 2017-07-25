@@ -4,7 +4,15 @@ class IpsController < ApplicationController
   # GET /ips
   # GET /ips.json
   def index
-    @ips = Ip.all
+    @ips = case current_user.role
+    when "cetak_genteng"
+      Ip.genteng_site
+    when "cetak_blok"
+      Ip.blok_site
+    else
+      Ip.all
+    end
+    
   end
 
   # GET /ips/1
