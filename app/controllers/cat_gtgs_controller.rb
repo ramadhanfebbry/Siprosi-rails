@@ -15,6 +15,10 @@ class CatGtgsController < ApplicationController
   # GET /cat_gtgs/new
   def new
     @cat_gtg = CatGtg.new
+    if(params[:gosok_id])
+      @cat_gtg.gosok_id = params[:gosok_id]
+      @gosok = Gosok.find(params[:gosok_id])
+    end
   end
 
   # GET /cat_gtgs/1/edit

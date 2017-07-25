@@ -6,6 +6,6 @@ class CatGtg < ActiveRecord::Base
   after_save :adjust_hp
 
   def adjust_hp
-    Hp.create(cat_gtg_id: self.id, hasil_produksi: self.hasil, target_produksi: self.gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty)
+    Hp.create(cat_gtg_id: self.id)
   end
 end

@@ -15,6 +15,7 @@ class RendamsController < ApplicationController
   # GET /rendams/new
   def new
     @rendam = Rendam.new
+    @rendam.cetak_gtg_id = params[:cetak_gtg_id]
   end
 
   # GET /rendams/1/edit

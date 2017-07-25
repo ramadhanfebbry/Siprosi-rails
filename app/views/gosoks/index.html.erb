@@ -12,7 +12,7 @@
         <th>Hasil</th>
         <th>Rusak</th>
         <th>Keterangan</th>        
-        <% if current_user.role.eql?("gosok_genteng") %>   
+        <% if current_user.role.eql?("gosok_genteng") || current_user.role.eql?("cat_genteng") %>   
         <th>Aksi</th>
         <% end %>
       </thead>
@@ -28,6 +28,8 @@
           <td>
           <% if current_user.role.eql?("gosok_genteng") %>   
             <%= link_to 'Edit', edit_gosok_path(gosok), class: "btn btn-info btn-fill btn-sm" %>
+          <% elsif current_user.role.eql?("cat_genteng") %>   
+            <%= link_to 'Tambah Cat Genteng', new_cat_gtg_path(gosok_id: gosok), class: "btn btn-info btn-fill btn-sm" %>
           <% end %>
           </td>
         </tr>              

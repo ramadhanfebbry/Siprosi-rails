@@ -15,7 +15,10 @@ class PbsController < ApplicationController
   # GET /pbs/new
   def new
     @pb = Pb.new
-    @pb.rp_id = params[:rp_id]
+    if(params[:rp_id])
+      @pb.rp_id = params[:rp_id]
+      @rp = Rp.find(params[:rp_id])
+    end    
   end
 
   # GET /pbs/1/edit

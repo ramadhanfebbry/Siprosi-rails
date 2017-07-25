@@ -15,6 +15,12 @@ class GosoksController < ApplicationController
   # GET /gosoks/new
   def new
     @gosok = Gosok.new
+    if(params[:rendam_id])
+      @gosok.rendam_id = params[:rendam_id]
+      
+      @rendam = Rendam.find(params[:rendam_id])
+    end
+    
   end
 
   # GET /gosoks/1/edit

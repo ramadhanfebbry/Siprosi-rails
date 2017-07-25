@@ -5,6 +5,6 @@ class CatBlok < ActiveRecord::Base
   has_one :hp, dependent: :destroy
 
   def adjust_hp
-    Hp.create(cat_blok_id: self.id, hasil_produksi: self.hasil, target_produksi: self.cetak_blok.ip.pb.rp.schedule_qty)
+    Hp.create(cat_blok_id: self.id)
   end
 end

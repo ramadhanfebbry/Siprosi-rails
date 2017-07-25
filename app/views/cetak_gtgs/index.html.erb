@@ -29,6 +29,10 @@
           <td>
             <%= link_to 'Edit', edit_cetak_gtg_path(cetak_gtg), class: "btn btn-info btn-fill btn-sm" %>            
           </td>
+          <% elsif current_user.role.eql?("rendam_genteng") %>   
+          <td>
+            <%= link_to 'Tambah Rendam Genteng', new_rendam_path(cetak_gtg_id: cetak_gtg), class: "btn btn-info btn-fill btn-sm" %>            
+          </td>
           <% end %>
         </tr>              
         <%end%>
