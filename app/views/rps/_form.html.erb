@@ -58,7 +58,31 @@
             <%= f.text_field :plan_date, :class => "form-control border-input datepicker" %>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label>Nama Customer</label>            
+            <%= f.text_field :nama_customer, :class => "form-control border-input" %>
+          </div>
         </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Alamat</label>            
+            <%= f.text_field :alamt, :class => "form-control border-input" %>
+          </div>
+        </div>
+      </div>
+       <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label>Telpon</label>            
+            <%= f.text_field :telpon, :class => "form-control border-input" %>
+          </div>
+        </div>
+        
+      </div>
       
       <div class="text-center">
         <button type="submit" class="btn btn-info btn-fill btn-wd">Save</button>

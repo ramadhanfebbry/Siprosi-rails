@@ -15,7 +15,7 @@ class CetakBloksController < ApplicationController
   # GET /cetak_bloks/new
   def new
     @cetak_blok = CetakBlok.new
-    # @cetak_blok.ip_id = params[:ip_id]
+    @cetak_blok.ip_id = params[:ip_id]
   end
 
   # GET /cetak_bloks/1/edit

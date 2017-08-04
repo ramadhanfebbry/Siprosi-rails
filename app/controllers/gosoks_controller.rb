@@ -17,7 +17,6 @@ class GosoksController < ApplicationController
     @gosok = Gosok.new
     if(params[:rendam_id])
       @gosok.rendam_id = params[:rendam_id]
-      
       @rendam = Rendam.find(params[:rendam_id])
     end
     

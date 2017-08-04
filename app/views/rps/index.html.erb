@@ -13,6 +13,9 @@
         <th>Date</th>
         <th>Keterangan</th>
         <th>Plan date</th>
+        <th>Customer</th>
+        <th>Alamat</th>
+        <th>Telpon</th>
         <% if current_user.role == 'ppic' || current_user.role == 'produksi'%> 
         <th>Aksi</th>
         <% end %>
@@ -27,6 +30,9 @@
           <td><%= rp.created_at.to_date %></td>
           <td><%= rp.keterangan %></td>
           <td><%= rp.plan_date %></td>
+          <td><%= rp.nama_customer %></td>
+          <td><%= rp.alamat %></td>
+          <td><%= rp.telpon %></td>
           <% if current_user.role == 'ppic' %> 
           <td>
             <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
