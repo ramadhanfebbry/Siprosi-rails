@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   resources :rendams
   resources :cetak_bloks
   resources :cetak_gtgs
-  resources :hps
+  resources :hps 
   resources :ips
   resources :rps
-  resources :pbs
+  resources :pbs do
+    get 'konfirmasi', as: :konfirmasi
+  end
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
   root 'dashboard#home'
   get 'laporan' => 'dashboard#laporan'
   get 'laporan_print' => 'dashboard#laporan_print'
-  
+  get 'reject_produksi' => 'hps#reject_produksi'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

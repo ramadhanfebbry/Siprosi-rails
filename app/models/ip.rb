@@ -11,4 +11,8 @@ class Ip < ActiveRecord::Base
   def self.blok_site
     joins(:pb => :rp).where({"rps.site" => "Blok"})
   end
+
+  def create_hp
+    Hp.create(ip_id: self.id)
+  end
 end

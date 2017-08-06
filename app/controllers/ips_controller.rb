@@ -22,7 +22,7 @@ class IpsController < ApplicationController
 
   # GET /ips/new
   def new
-    @ip = Ip.new
+    @ip = Ip.new(pb_id: params[:pb_id])
   end
 
   # GET /ips/1/edit

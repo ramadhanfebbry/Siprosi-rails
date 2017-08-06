@@ -28,7 +28,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Gosok</label>
-            <%= f.select :gosok_id, Gosok.all.map { |c| [ c.id, c.id ] }, {}, :class => "form-control border-input", :disabled => (params[:rp_id] && @pb.new_record?) %>
+            <%= f.select :gosok_id, Gosok.all.map { |c| [ c.id, c.id ] }, {}, :class => "form-control border-input", :readonly => (params[:rp_id] && @pb.new_record?) %>
              
           </div>
         </div>    

@@ -10,8 +10,11 @@
         <th>Instruksi Produksi</th>
         <th>Rencana Produksi</th>
         <th>Hasil Produksi</th>
-        <th>Target Produksi</th>        
+        <th>Target Produksi</th>    
+        <th>Status Pengerjaan</th>    
+        <%if action_name.eql?('index') %>    
         <th>Aksi</th>
+        <% end%>
       </thead>
       <tbody>
         <% @hps.each_with_index do |hp| %>
@@ -20,10 +23,13 @@
           <td><%= hp.ip.id %></td>   
           <td><%= hp.ip.pb.rp.id %></td>   
           <td><%= hp.hasil_produksi %></td>
-          <td><%= hp.target_produksi %></td>        
+          <td><%= hp.target_produksi %></td>
+          <td><%= hp.status_pengerjaan %></td>
+          <%if action_name.eql?('index') %>            
           <td>
             <%= link_to 'Detail', hp_path(hp), class: "btn btn-info btn-fill btn-sm" %>            
           </td>
+          <% end %>
         </tr>              
         <%end%>
       </tbody>

@@ -4,7 +4,12 @@ class HpsController < ApplicationController
   # GET /hps
   # GET /hps.json
   def index
-      @hps = Hp.all   
+      @hps = Hp.approved   
+  end
+
+  def reject_produksi
+    @hps = Hp.reject
+    render 'index'
   end
 
   # GET /hps/1

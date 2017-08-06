@@ -6,6 +6,6 @@ class CatGtg < ActiveRecord::Base
   after_save :adjust_hp
 
   def adjust_hp
-    Hp.create(cat_gtg_id: self.id)
+    hp.update_attributes(cat_gtg_id: self.id)
   end
 end

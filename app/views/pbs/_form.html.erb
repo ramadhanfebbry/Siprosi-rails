@@ -27,9 +27,9 @@
           <div class="form-group">
             <label>Rencana Produksi</label>            
             <% if params[:rp_id] && @pb.new_record? %>
-              <%= f.select :rp_id, Rp.all.map { |c| [ "RP-#{c.id}", c.id ] }, {}, :class => "form-control border-input", :disabled => true %>
+              <%= f.select :rp_id, Rp.all.map { |c| [ "RP-#{c.id}", c.id ] }, {}, :class => "form-control border-input", :readonly => true %>
             <% else %>
-              <%= f.select :rp_id, Rp.all.map { |c| [ "RP-#{c.id}", c.id ] }, {}, :class => "form-control border-input", :disabled => (current_user.role.eql?("gudang")) %>
+              <%= f.select :rp_id, Rp.all.map { |c| [ "RP-#{c.id}", c.id ] }, {}, :class => "form-control border-input", :readonly => (current_user.role.eql?("gudang")) %>
             <% end %>
             
           </div>
@@ -37,7 +37,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Status</label>
-            <%= f.select :status, ["Belum Konfirmasi", "Konfirmasi"].map { |value| [ value, value ] }, {}, class: "form-control border-input"  %>              
+            <%= f.select :status, ["Belum Konfirmasi", "Konfirmasi"].map { |value| [ value, value ] }, {}, class: "form-control border-input", readonly: true  %>              
           </div>
         </div>
       </div>
@@ -46,13 +46,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Schedule Qty</label>            
-                <%= text_field_tag "", @rp.schedule_qty, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.schedule_qty, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Item Name</label>            
-                <%= text_field_tag "", @rp.barang.id_barang, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.barang.id_barang, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
           </div>
@@ -60,13 +60,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Site</label>            
-                <%= text_field_tag "", @rp.site, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.site, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Date</label>            
-                <%= text_field_tag "", @rp.created_at.to_date, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.created_at.to_date, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
           </div>
@@ -74,13 +74,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Keterangan</label>            
-                <%= text_field_tag "", @rp.keterangan, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.keterangan, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>Plan Date</label>            
-                <%= text_field_tag "", @rp.plan_date, :class => "form-control border-input", disabled: true %>
+                <%= text_field_tag "", @rp.plan_date, :class => "form-control border-input", readonly: true %>
               </div>
             </div>
           </div>

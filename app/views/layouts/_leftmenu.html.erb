@@ -45,6 +45,14 @@
                         </a>
                 </li>
                 <% end %>
+                <% if current_user.role == 'ppic' %> 
+                <li class="<%='active' if controller_name == 'hps' && action_name.eql?('reject_produksi') %>">
+                        <a href="/reject_produksi">
+                            <i class="ti-view-list-alt"></i>
+                            <p>Reject Produksi</p>
+                        </a>
+                </li>
+                <% end %>
                 <% if ['produksi', 'cetak_genteng', 'cetak_blok'].include?(current_user.role) %>
                 <li class="<%='active' if controller_name == 'ips' %>">
                         <a href="/ips">
@@ -110,7 +118,7 @@
                 </li>        
                 <% end %>
 
-                 <% if current_user.role == 'produksi'  %> 
+                 <% if current_user.role == 'produksi' || current_user.role == 'gudang'  %> 
                 <li class="<%='active' if controller_name == 'dashboard' && action_name == 'laporan' %>">
                         <a href="/laporan">
                             <i class="ti-view-list-alt"></i>

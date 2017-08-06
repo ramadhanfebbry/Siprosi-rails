@@ -5,6 +5,6 @@ class CatBlok < ActiveRecord::Base
   has_one :hp, dependent: :destroy
 
   def adjust_hp
-    Hp.create(cat_blok_id: self.id)
+    hp.update_attributes(cat_blok_id: self.id)
   end
 end

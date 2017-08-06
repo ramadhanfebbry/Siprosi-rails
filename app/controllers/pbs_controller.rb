@@ -41,6 +41,13 @@ class PbsController < ApplicationController
     end
   end
 
+  def konfirmasi
+    pb = Pb.find(params[:pb_id])
+    pb.update_attribute(:status, 'Konfirmasi')
+
+    redirect_to pbs_url, notice: 'Pb confirmed.'
+  end
+
   # PATCH/PUT /pbs/1
   # PATCH/PUT /pbs/1.json
   def update
