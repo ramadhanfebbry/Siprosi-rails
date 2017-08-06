@@ -77,3 +77,5 @@ connection.execute("INSERT INTO barangs (id_barang, kategori_id, type_barang, un
 ('GTG-00064', 1, 'Majectic Nok Siku', 'pcs', 'Natural', '4.45', 'P-PGD GTG Warna-site'),
 ('GTG-00065', 1, 'Majetic Nok Atas', 'pcs', 'Natural', '4.45', 'P-PGD GTG Warna-site'),
 ('PB-00001', 2, 'jsk', 'pcs', 'jk', '8', 'P-PGD GTG Warna-site');")
+
+Notification.create()

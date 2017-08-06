@@ -5,7 +5,14 @@ class CatGtg < ActiveRecord::Base
 
   after_save :adjust_hp
 
+  after_create :notify
+
+  def notify
+    notif = Notification.first
+    notif.cat_gtg_count = notif.cat_gtg_count+1
+    notif.save
+  end
   def adjust_hp
-    hp.update_attributes(cat_gtg_id: self.id)
+    gosok.rendam.cetak_gtg.ip.hp.update_attributes(cat_gtg_id: self.id)
   end
 end

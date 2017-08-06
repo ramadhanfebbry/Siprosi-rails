@@ -27,7 +27,7 @@
           </td>    
           <% elsif current_user.role == 'gudang' %> 
             <td>
-            <%= link_to 'Konfirmasi', pb_konfirmasi_path(pb), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Konfirmasi', pb_konfirmasi_path(pb), class: "btn btn-info btn-fill btn-sm" if pb.status.eql?('Belum Konfirmasi') %>
           </td>    
           <% end %>
 

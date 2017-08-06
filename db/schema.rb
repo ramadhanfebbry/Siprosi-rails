@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718234303) do
+ActiveRecord::Schema.define(version: 20170806170822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "cat_bloks", force: :cascade do |t|
     t.integer  "cetak_blok_id"
-    t.string   "date"
     t.integer  "hasil"
     t.integer  "rusak"
     t.string   "keterangan"
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "cat_gtgs", force: :cascade do |t|
     t.integer  "gosok_id"
-    t.string   "date"
     t.integer  "hasil"
     t.integer  "rusak"
     t.string   "keterangan"
@@ -50,7 +48,6 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "cetak_bloks", force: :cascade do |t|
     t.integer  "ip_id"
-    t.string   "date"
     t.integer  "hasil"
     t.integer  "rusak"
     t.string   "keterangan"
@@ -60,7 +57,6 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "cetak_gtgs", force: :cascade do |t|
     t.integer  "ip_id"
-    t.string   "date"
     t.integer  "hasil"
     t.integer  "rusak"
     t.string   "keterangan"
@@ -79,24 +75,37 @@ ActiveRecord::Schema.define(version: 20170718234303) do
   end
 
   create_table "hps", force: :cascade do |t|
-    t.integer  "hasil_produksi"
-    t.integer  "target_produksi"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "cat_blok_id"
     t.integer  "cat_gtg_id"
+    t.integer  "ip_id"
   end
 
   create_table "ips", force: :cascade do |t|
-    t.string   "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "pb_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "cat_blok_count",   default: 0
+    t.integer  "cat_gtg_count",    default: 0
+    t.integer  "gosok_count",      default: 0
+    t.integer  "hp_count",         default: 0
+    t.integer  "ip_gtg_count",     default: 0
+    t.integer  "ip_blok_count",    default: 0
+    t.integer  "pb_count",         default: 0
+    t.integer  "rendam_count",     default: 0
+    t.integer  "rp_count",         default: 0
+    t.integer  "konfirmasi_count", default: 0
+    t.integer  "cetak_gtg_count",  default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "pbs", force: :cascade do |t|
     t.integer  "rp_id"
-    t.string   "date"
     t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,7 +113,6 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "rendams", force: :cascade do |t|
     t.integer  "cetak_gtg_id"
-    t.string   "date"
     t.integer  "hasil"
     t.integer  "rusak"
     t.string   "keterangan"
@@ -114,14 +122,15 @@ ActiveRecord::Schema.define(version: 20170718234303) do
 
   create_table "rps", force: :cascade do |t|
     t.integer  "schedule_qty"
-    t.string   "item_name"
     t.string   "site"
-    t.string   "date"
     t.text     "keterangan"
     t.string   "plan_date"
     t.integer  "barang_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "nama_customer"
+    t.string   "alamat"
+    t.string   "telpon"
   end
 
   create_table "users", force: :cascade do |t|

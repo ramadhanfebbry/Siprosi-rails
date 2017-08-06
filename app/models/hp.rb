@@ -3,7 +3,13 @@ class Hp < ActiveRecord::Base
   belongs_to :cat_gtg
   belongs_to :ip
 
+  after_create :notify
 
+  def notify
+    notif = Notification.first
+    notif.hp_count = notif.hp_count+1
+    notif.save
+  end
  # def ip
  #    if cat_blok
  #      cat_blok.cetak_blok.ip

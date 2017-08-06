@@ -32,7 +32,13 @@
                 <li class="<%='active' if controller_name == 'pbs' %>">
                         <a href="/pbs">
                             <i class="ti-view-list-alt"></i>
+                            <% if current_user.role.eql?('gudang') %>
+                            <p>Permintaan Bahan <span class="badge"><%= @notification.pb_count.nonzero?  %></span></p>
+                            <% elsif current_user.role.eql?('produksi') %>
+                            <p>Permintaan Bahan <span class="badge"><%= @notification.konfirmasi_count.nonzero?  %></span></p>
+                            <% else %>
                             <p>Permintaan Bahan</p>
+                            <% end %>
                         </a>
                 </li>
                 <% end %>
@@ -41,7 +47,7 @@
                 <li class="<%='active' if controller_name == 'rps' %>">
                         <a href="/rps">
                             <i class="ti-view-list-alt"></i>
-                            <p>Rencana Produksi</p>
+                            <p>Rencana Produksi <span class="badge"><%= @notification.rp_count.nonzero? if current_user.role.eql?('produksi') %></span></p>
                         </a>
                 </li>
                 <% end %>
@@ -57,7 +63,14 @@
                 <li class="<%='active' if controller_name == 'ips' %>">
                         <a href="/ips">
                             <i class="ti-view-list-alt"></i>
+                            <% if current_user.role.eql?('cetak_genteng') %>
+                            <p>Instruksi Produksi <span class="badge"><%= @notification.ip_gtg_count.nonzero?  %></span></p>
+                            <% elsif current_user.role.eql?('cetak_blok') %>
+                            <p>Instruksi Produksi <span class="badge"><%= @notification.ip_blok_count.nonzero?  %></span></p>
+                            <%else%>
                             <p>Instruksi Produksi</p>
+                            <% end %>
+                            
                         </a>
                 </li>
                 <% end %>
@@ -65,7 +78,7 @@
          <li class="<%='active' if controller_name == 'hps' %>">
                         <a href="/hps">
                             <i class="ti-view-list-alt"></i>
-                            <p>Hasil Produksi</p>
+                            <p>Hasil Produksi <span class="badge"><%= @notification.hasil_produksi.nonzero? if current_user.role.eql?('produksi') %></span></p>
                         </a>
                 </li>
                 <% end %>
@@ -81,11 +94,11 @@
                   <li class="<%='active' if controller_name == 'cetak_gtgs' %>">
                         <a href="/cetak_gtgs">
                             <i class="ti-view-list-alt"></i>
-                            <p>Cetak Genteng</p>
+                            <p>Cetak Genteng <span class="badge"><%= @notification.cetak_gtg_count.nonzero? if current_user.role.eql?('rendam_genteng') %></span></p>
                         </a>
                 </li>       
                 <% end %> 
-                <% if current_user.role == 'cat_blok' || current_user.role == 'produksi'%> 
+                <% if current_user.role == 'cat_blok' %> 
                 <li class="<%='active' if controller_name == 'cat_bloks' %>">
                         <a href="/cat_bloks">
                             <i class="ti-view-list-alt"></i>
@@ -97,7 +110,7 @@
                 <li class="<%='active' if controller_name == 'rendams' %>">
                         <a href="/rendams">
                             <i class="ti-view-list-alt"></i>
-                            <p>Rendam</p>
+                            <p>Rendam <span class="badge"><%= @notification.rendam_count.nonzero? if current_user.role.eql?('gosok_genteng') %></span></p>
                         </a>
                 </li>        
                 <% end %>
@@ -105,11 +118,11 @@
                 <li class="<%='active' if controller_name == 'gosoks' %>">
                         <a href="/gosoks">
                             <i class="ti-view-list-alt"></i>
-                            <p>Gosok</p>
+                            <p>Gosok <span class="badge"><%= @notification.gosok_count.nonzero? if current_user.role.eql?('cat_genteng') %></span></p>
                         </a>
                 </li>       
                 <% end %> 
-                <% if current_user.role == 'cat_genteng' || current_user.role == 'produksi'  %> 
+                <% if current_user.role == 'cat_genteng' %> 
                 <li class="<%='active' if controller_name == 'cat_gtgs' %>">
                         <a href="/cat_gtgs">
                             <i class="ti-view-list-alt"></i>

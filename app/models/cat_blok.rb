@@ -4,6 +4,14 @@ class CatBlok < ActiveRecord::Base
   after_save :adjust_hp
   has_one :hp, dependent: :destroy
 
+  after_create :notify
+
+  def notify
+    notif = Notification.first
+    notif.cat_blok_count = notif.cat_blok_count+1
+    notif.save
+  end
+
   def adjust_hp
     hp.update_attributes(cat_blok_id: self.id)
   end
