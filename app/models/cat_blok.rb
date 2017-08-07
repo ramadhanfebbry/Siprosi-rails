@@ -13,6 +13,6 @@ class CatBlok < ActiveRecord::Base
   end
 
   def adjust_hp
-    hp.update_attributes(cat_blok_id: self.id)
+    cetak_blok.ip.hp.update_attributes(cat_blok_id: self.id)
   end
 end
