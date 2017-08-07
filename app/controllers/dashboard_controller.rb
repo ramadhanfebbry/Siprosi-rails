@@ -11,11 +11,11 @@ class DashboardController < ApplicationController
       @hps = Hp.all   
     end
 
-    if(params["start_date"] && params["end_date"])
+    if(params["start_date"].present? && params["end_date"].present?)
       @hps =  @hps.where("created_at > ? AND created_at < ?", "#{params['start_date']} 00:00:00", "#{params['end_date']} 00:00:00")
-    elsif (params[:start_date] && !params[:end_date])
+    elsif (params[:start_date].present? && !params[:end_date].present?)
       @hps =  @hps.where("created_at > ?", "#{params['start_date']} 00:00:00")
-    elsif (!params[:start_date] && params[:end_date])
+    elsif (!params[:start_date].present? && params[:end_date].present?)
       @hps =  @hps.where("created_at < ?", "#{params['end_date']} 00:00:00")
     else
     end
@@ -45,13 +45,14 @@ class DashboardController < ApplicationController
       @hps = Hp.all   
     end
 
-    if(params["start_date"] && params["end_date"])
+    if(params["start_date"].present? && params["end_date"].present?)
       @hps =  @hps.where("created_at > ? AND created_at < ?", "#{params['start_date']} 00:00:00", "#{params['end_date']} 00:00:00")
-    elsif (params[:start_date] && !params[:end_date])
+    elsif (params['start_date'].present? && !params['end_date'].present?)
       @hps =  @hps.where("created_at > ?", "#{params['start_date']} 00:00:00")
-    elsif (!params[:start_date] && params[:end_date])
+    elsif (!params['start_date'].present? && params['end_date'].present?)
       @hps =  @hps.where("created_at < ?", "#{params['end_date']} 00:00:00")
     else
+      
     end
     render layout: false
   end
