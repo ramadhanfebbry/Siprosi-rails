@@ -2,6 +2,7 @@ class CetakGtg < ActiveRecord::Base
   validates :ip_id , :hasil, :rusak, presence: true
   belongs_to :ip
   has_one :rendam, dependent: :destroy
+  validates :ip_id, uniqueness: true
   after_create :notify
 
   def notify

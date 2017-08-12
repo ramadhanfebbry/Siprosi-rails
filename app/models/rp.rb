@@ -3,7 +3,9 @@ class Rp < ActiveRecord::Base
   belongs_to :barang
   before_save :set_site
   has_many :rp, dependent: :destroy
-after_create :notify
+  
+  after_create :notify
+  
   def notify
     notif = Notification.first
     notif.rp_count = notif.rp_count+1

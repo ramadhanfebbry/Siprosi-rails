@@ -1,9 +1,10 @@
 class Pb < ActiveRecord::Base
   validates :rp_id, presence: true
   belongs_to :rp
-  has_many :ips, dependent: :destroy
+  has_one :ip, dependent: :destroy
   after_create :notify
   after_save :notify_konfirm
+  validates :rp_id, uniqueness: true
 
   def notify
     notif = Notification.first

@@ -5,6 +5,8 @@ class Ip < ActiveRecord::Base
   has_one :cetak_blok, dependent: :destroy
   has_one :hp
 
+  validates :pb_id, uniqueness: true
+  
   after_create :create_hp
 
   def self.genteng_site

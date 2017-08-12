@@ -4,6 +4,8 @@ class CatBlok < ActiveRecord::Base
   after_save :adjust_hp
   has_one :hp, dependent: :destroy
 
+  validates :cetak_blok_id, uniqueness: true
+
   after_create :notify
 
   def notify

@@ -20,16 +20,20 @@
             <td><%= pb.rp_id %></td>
             <td><%= pb.created_at.to_date %></td>
             <td><%= pb.status %></td>
+            
           <% if current_user.role == 'produksi' %> 
             <td>
             <%= link_to 'Edit', edit_pb_path(pb), class: "btn btn-info btn-fill btn-sm" %>
+            <% if pb.ip.blank? %>
             <%= link_to 'Tambah IP', new_ip_path(pb_id: pb.id), class: "btn btn-info btn-fill btn-sm" %>            
+            <% end %>
           </td>    
           <% elsif current_user.role == 'gudang' %> 
             <td>
             <%= link_to 'Konfirmasi', pb_konfirmasi_path(pb), class: "btn btn-info btn-fill btn-sm" if pb.status.eql?('Belum Konfirmasi') %>
           </td>    
           <% end %>
+          
 
           </tr>              
         <%end%>
