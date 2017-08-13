@@ -2,7 +2,7 @@ class Rp < ActiveRecord::Base
   validates :schedule_qty , :keterangan, :plan_date, presence: true
   belongs_to :barang
   before_save :set_site
-  has_many :rp, dependent: :destroy
+  has_one :pb, dependent: :destroy
   
   after_create :notify
   

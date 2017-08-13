@@ -9,22 +9,32 @@
         <th>ID</th>
         <th>Rencana Produksi</th>
         <th>Date</th>
+        
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Site</th>
+        <th>Keterangan</th>
+        <th>Plan date</th>
         <th>Status</th>
         <th>Aksi</th>
       </thead>
       <tbody>
       <% @pbs.each do |pb| %>
         <tr>
-            <td><%= pb.id %></td>
-            
+            <td><%= pb.id %></td>            
             <td><%= pb.rp_id %></td>
             <td><%= pb.created_at.to_date %></td>
+            <td><%= pb.rp.schedule_qty %></td>
+            <td><%= pb.rp.barang.id_barang %></td>
+            <td><%= pb.rp.site %></td>
+            <td><%= pb.rp.keterangan %></td>
+            <td><%= pb.rp.plan_date %></td>
             <td><%= pb.status %></td>
             
           <% if current_user.role == 'produksi' %> 
             <td>
             <%= link_to 'Edit', edit_pb_path(pb), class: "btn btn-info btn-fill btn-sm" %>
-            <% if pb.ip.blank? %>
+            <% if pb.ip.blank? && pb.status.eql?('Belum Konfirmasi') %>
             <%= link_to 'Tambah IP', new_ip_path(pb_id: pb.id), class: "btn btn-info btn-fill btn-sm" %>            
             <% end %>
           </td>    

@@ -24,6 +24,40 @@
         </div>        
       </div>
 
+
+ <div class="row">
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Schedule Qty</label>            
+            <%= number_field_tag :schedule_qty, @cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty, :class => "form-control border-input", disabled: true %>
+          </div>
+        </div>        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Barang</label>
+            <br>
+            <%= text_field_tag :barang_id, @cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.barang_id, :class => "form-control border-input", disabled: true %>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+            <label>Keterangan</label>            
+            <%= text_field_tag :keterangan, @cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.keterangan, :class => "form-control border-input", disabled: true %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Plan Date (DD/MM/YYYY)</label>
+            <%= text_field_tag :plan_date, @cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.plan_date, :class => "form-control border-input", disabled: true %>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">

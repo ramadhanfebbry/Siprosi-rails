@@ -10,6 +10,11 @@
         <th>ID</th>
         <th>Permintaan Bahan</th>
         <th>Date</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Site</th>
+        <th>Keterangan</th>
+        <th>Plan date</th>
         <% if current_user.role.eql?('produksi') %>
           <th>Aksi</th>
         <% end %>
@@ -20,12 +25,17 @@
           <td><%= ip.id %></td>          
           <td><%= ip.pb_id %></td>        
           <td><%= ip.created_at.to_date %></td>        
+          <td><%= ip.pb.rp.schedule_qty %></td>
+          <td><%= ip.pb.rp.barang.id_barang %></td>
+          <td><%= ip.pb.rp.site %></td>
+          <td><%= ip.pb.rp.keterangan %></td>
+          <td><%= ip.pb.rp.plan_date %></td>
           <% if current_user.role.eql?('produksi') %>
             <td><%= link_to 'Edit', edit_ip_path(ip), class: "btn btn-info btn-fill btn-sm" %>
           <% elsif current_user.role.eql?('cetak_genteng') %>
-            <td><%= link_to 'Tambah Cetak Genteng', new_cetak_gtg_path(ip_id: ip), class: "btn btn-info btn-fill btn-sm" %>
+            <td><%= link_to 'Tambah Cetak Genteng', new_cetak_gtg_path(ip_id: ip), class: "btn btn-info btn-fill btn-sm" if ip.cetak_gtg.blank? %>
           <% elsif current_user.role.eql?('cetak_blok') %>
-            <td><%= link_to 'Tambah Cetak Genteng', new_cetak_blok_path(ip_id: ip), class: "btn btn-info btn-fill btn-sm" %>
+            <td><%= link_to 'Tambah Cetak Blok', new_cetak_blok_path(ip_id: ip), class: "btn btn-info btn-fill btn-sm" if ip.cetak_blok.blank?  %>
           <% end %>
 
           </td>

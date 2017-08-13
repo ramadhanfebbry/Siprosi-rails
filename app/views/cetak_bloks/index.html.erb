@@ -11,6 +11,9 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Plan date</th>
         <th>Keterangan</th>     
         <% if current_user.role.eql?("cetak_blok") %>   
         <th>Aksi</th>
@@ -24,6 +27,10 @@
           <td><%= cetak_blok.created_at.to_date %></td>
           <td><%= cetak_blok.hasil %></td>
           <td><%= cetak_blok.rusak %></td>
+          <td><%= cetak_blok.ip.pb.rp.schedule_qty %></td>
+          <td><%= cetak_blok.ip.pb.rp.barang.id_barang %></td>
+          <td><%= cetak_blok.ip.pb.rp.plan_date %></td>
+
           <td><%= cetak_blok.keterangan %></td>
           <% if current_user.role.eql?("cetak_blok") %>   
           <td>
@@ -31,7 +38,7 @@
             </td>
           <% else %>  
           <td>
-            <%= link_to 'Tambah Cat Blok', new_cat_blok_path(cetak_blok_id: cetak_blok.id), class: "btn btn-info btn-fill btn-sm" %>
+            <%= link_to 'Tambah Cat Blok', new_cat_blok_path(cetak_blok_id: cetak_blok.id), class: "btn btn-info btn-fill btn-sm" if cetak_blok.cat_blok.blank? %>
           </td>
           <% end %>
         </tr>              

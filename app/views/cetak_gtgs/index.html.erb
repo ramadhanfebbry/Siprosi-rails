@@ -11,6 +11,10 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Plan date</th>
+        
         <th>Keterangan</th>        
         <% if current_user.role.eql?("cetak_genteng") %>   
         <th>Aksi</th>
@@ -24,6 +28,10 @@
           <td><%= cetak_gtg.created_at.to_date %></td>
           <td><%= cetak_gtg.hasil %></td>
           <td><%= cetak_gtg.rusak %></td>
+          <td><%= cetak_gtg.ip.pb.rp.schedule_qty %></td>
+          <td><%= cetak_gtg.ip.pb.rp.barang.id_barang %></td>
+          <td><%= cetak_gtg.ip.pb.rp.plan_date %></td>
+
           <td><%= cetak_gtg.keterangan %></td>
           <% if current_user.role.eql?("cetak_genteng") %>   
           <td>
@@ -31,7 +39,7 @@
           </td>
           <% elsif current_user.role.eql?("rendam_genteng") %>   
           <td>
-            <%= link_to 'Tambah Rendam Genteng', new_rendam_path(cetak_gtg_id: cetak_gtg), class: "btn btn-info btn-fill btn-sm" %>            
+            <%= link_to 'Tambah Rendam Genteng', new_rendam_path(cetak_gtg_id: cetak_gtg), class: "btn btn-info btn-fill btn-sm" if cetak_gtg.rendam.blank? %>            
           </td>
           <% end %>
         </tr>              
