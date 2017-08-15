@@ -43,6 +43,32 @@ class Hp < ActiveRecord::Base
     end
   end
 
+  def hasil_status_pengerjaan
+    
+    hasil = if rp.site.eql?('Genteng') 
+      if ip && ip.cetak_gtg.blank?
+         0
+      elsif ip && ip.cetak_gtg && ip.cetak_gtg.rendam.blank?
+        ip.cetak_gtg.hasil
+      elsif ip && ip.cetak_gtg && ip.cetak_gtg.rendam && ip.cetak_gtg.rendam.gosok.blank?
+        ip.cetak_gtg.rendam.hasil
+      elsif ip && ip.cetak_gtg && ip.cetak_gtg.rendam && ip.cetak_gtg.rendam.gosok && ip.cetak_gtg.rendam.gosok.cat_gtg.blank?
+        ip.cetak_gtg.rendam.gosok.hasil
+      elsif ip && ip.cetak_gtg && ip.cetak_gtg.rendam && ip.cetak_gtg.rendam.gosok && ip.cetak_gtg.rendam.gosok.cat_gtg
+        ip.cetak_gtg.rendam.gosok.cat_gtg.hasil
+      end
+    else
+      if ip && ip.cetak_blok.blank?
+        0
+      elsif ip && ip.cetak_blok && ip.cetak_blok.cat_blok.blank?
+        ip.cetak_blok.hasil
+      elsif ip && ip.cetak_blok && ip.cetak_blok.cat_blok
+        ip.cetak_blok.cat_blok.hasil
+      end
+    end
+    return hasil
+  end
+
   def self.reject
     res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty > cetak_bloks.hasil")
     res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty > cat_gtgs.hasil")

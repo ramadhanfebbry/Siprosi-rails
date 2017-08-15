@@ -40,9 +40,7 @@ Periode dari tanggal: <input type="text" id="datepicker" value="<%= params[:star
         <th>Tgl Selesai</th>        
         <th>Hasil Produksi</th>        
         <th>Site</th>
-        
-        
-        
+        <th>Status</th>        
       </thead>
       <tbody>
         <% @hps.each do |hp| %>
@@ -56,8 +54,9 @@ Periode dari tanggal: <input type="text" id="datepicker" value="<%= params[:star
           <td><%= hp.rp.barang.id_barang %></td>   
           <td><%= hp.rp.barang.id_barang %></td>   
           <td><%= hp.created_at.strftime("%d/%m/%Y") %></td>   
-          <td><%= hp.hasil_produksi %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.hasil_status_pengerjaan %> <%= hp.rp.barang.unit %></td>
           <td><%= hp.rp.site %></td>                  
+          <td><%= hp.status_pengerjaan %></td>                  
         </tr>              
         <%end%>
       </tbody>
