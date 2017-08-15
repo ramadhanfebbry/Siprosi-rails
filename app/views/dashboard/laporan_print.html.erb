@@ -32,7 +32,7 @@
 <body>
 <div class="card">  
   <h3 align="center">Laporan Produksi</h3>
-  <div class="content table-responsive table-full-width">  
+    <div class="content table-responsive table-full-width">  
     <table class="table table-striped">
       <thead>
         <th>No. RP</th>
@@ -41,13 +41,11 @@
         <th>Tgl. PB</th>
         <th>No. IP</th>
         <th>Tgl. IP</th>
-        <th>Item Name</th>
-        <th>Tgl Selesai</th>        
+        <th>Kode Barang</th>
+        
         <th>Hasil Produksi</th>        
         <th>Site</th>
-        
-        
-        
+        <th>Status</th>        
       </thead>
       <tbody>
         <% @hps.each do |hp| %>
@@ -58,10 +56,10 @@
           <td><%= hp.ip.pb.created_at.to_date %></td>   
           <td><%= hp.ip.mask_id %></td>   
           <td><%= hp.ip.created_at.to_date %></td>   
-          <td><%= hp.rp.barang.id_barang %></td>             
-          <td><%= hp.created_at.strftime("%d/%m/%Y") %></td>   
-          <td><%= hp.hasil_produksi %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.rp.barang.id_barang %></td>     
+          <td><%= hp.hasil_status_pengerjaan %> <%= hp.rp.barang.unit %></td>
           <td><%= hp.rp.site %></td>                  
+          <td><%= hp.status_pengerjaan %></td>                  
         </tr>              
         <%end%>
       </tbody>
