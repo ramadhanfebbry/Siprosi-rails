@@ -17,7 +17,9 @@ class Pb < ActiveRecord::Base
       notif = Notification.first
       notif.konfirmasi_count = notif.konfirmasi_count+1
       notif.save
-    end
-    
+    end    
+  end
+  def mask_id
+    "PB#{self.id}"
   end
 end

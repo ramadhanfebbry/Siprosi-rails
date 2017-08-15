@@ -20,8 +20,8 @@
         <% @hps.each_with_index do |hp| %>
         <tr>
           <td><%= hp.id %></td>   
-          <td><%= hp.ip.id %></td>   
-          <td><%= hp.ip.pb.rp.id %></td>   
+          <td><%= hp.ip.mask_id %></td>   
+          <td><%= hp.ip.pb.rp.mask_id %></td>   
           <td><%= hp.hasil_produksi %></td>
           <td><%= hp.target_produksi %></td>
           <td><%= hp.status_pengerjaan %></td>

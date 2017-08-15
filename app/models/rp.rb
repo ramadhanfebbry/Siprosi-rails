@@ -14,4 +14,8 @@ class Rp < ActiveRecord::Base
   def set_site
     self.site = self.barang.kategori_id.eql?(1) ? 'Genteng' : 'Blok'
   end
+
+  def mask_id
+    "RP#{self.id}"
+  end
 end

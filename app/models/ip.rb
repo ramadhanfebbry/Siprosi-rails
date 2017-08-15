@@ -34,4 +34,8 @@ class Ip < ActiveRecord::Base
     
     notif.save
   end
+
+  def mask_id
+    "IP#{self.id}"
+  end
 end

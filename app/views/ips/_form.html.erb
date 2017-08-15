@@ -59,7 +59,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Permintaan Bahan</label>
-            <%= f.select :pb_id, Pb.all.map { |c| [ "PB-#{c.id}", c.id ] }, {}, :class => "form-control border-input" %>
+            <%= f.select :pb_id, Pb.all.map { |c| [ "PB-#{c.id}", c.id ] }, {}, :class => "form-control border-input", readonly: true %>
           </div>
         </div>
         

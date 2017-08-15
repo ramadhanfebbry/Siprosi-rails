@@ -52,11 +52,11 @@
       <tbody>
         <% @hps.each do |hp| %>
         <tr>
-          <td><%= hp.rp.id %></td>   
+          <td><%= hp.rp.mask_id %></td>   
           <td><%= hp.rp.created_at.to_date %></td>   
-          <td><%= hp.ip.pb.id %></td>   
+          <td><%= hp.ip.pb.mask_id %></td>   
           <td><%= hp.ip.pb.created_at.to_date %></td>   
-          <td><%= hp.ip.id %></td>   
+          <td><%= hp.ip.mask_id %></td>   
           <td><%= hp.ip.created_at.to_date %></td>   
           <td><%= hp.rp.barang.id_barang %></td>             
           <td><%= hp.created_at.strftime("%d/%m/%Y") %></td>   

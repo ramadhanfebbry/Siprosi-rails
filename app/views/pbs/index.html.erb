@@ -21,7 +21,7 @@
       <tbody>
       <% @pbs.each do |pb| %>
         <tr>
-            <td><%= pb.id %></td>            
+            <td><%= pb.mask_id %></td>            
             <td><%= pb.rp_id %></td>
             <td><%= pb.created_at.to_date %></td>
             <td><%= pb.rp.schedule_qty %></td>
@@ -33,14 +33,15 @@
             
           <% if current_user.role == 'produksi' %> 
             <td>
+            <td>
             <%= link_to 'Edit', edit_pb_path(pb), class: "btn btn-info btn-fill btn-sm" %>
-            <% if pb.ip.blank? && pb.status.eql?('Belum Konfirmasi') %>
+            <% if pb.ip.blank? && pb.status.eql?('Konfirmasi') %>
             <%= link_to 'Tambah IP', new_ip_path(pb_id: pb.id), class: "btn btn-info btn-fill btn-sm" %>            
             <% end %>
           </td>    
           <% elsif current_user.role == 'gudang' %> 
             <td>
-            <%= link_to 'Konfirmasi', pb_konfirmasi_path(pb), class: "btn btn-info btn-fill btn-sm" if pb.status.eql?('Belum Konfirmasi') %>
+            <%= link_to 'Konfirmasi', pb_konfirmasi_path(pb), class: "btn btn-info btn-fill btn-sm" unless pb.status.eql?('Konfirmasi') %>
           </td>    
           <% end %>
           

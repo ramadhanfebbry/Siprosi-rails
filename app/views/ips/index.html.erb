@@ -22,8 +22,8 @@
       <tbody>
         <% @ips.each do |ip| %>
         <tr>
-          <td><%= ip.id %></td>          
-          <td><%= ip.pb_id %></td>        
+          <td><%= ip.mask_id %></td>          
+          <td><%= ip.pb.mask_id %></td>        
           <td><%= ip.created_at.to_date %></td>        
           <td><%= ip.pb.rp.schedule_qty %></td>
           <td><%= ip.pb.rp.barang.id_barang %></td>
