@@ -11,8 +11,6 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
-        <th>Hasil</th>
-        <th>Rusak</th>
         <th>Schedule qty</th>
         <th>Item name</th>
         <th>Plan date</th>
@@ -35,8 +33,8 @@
         <td><%= rendam.keterangan %></td>
         <% if current_user.role.eql?("rendam_genteng") %>   
           <td><%= link_to 'Edit', edit_rendam_path(rendam), class: "btn btn-info btn-fill btn-sm" %>
-        <% elsif current_user.role.eql?("gosok_genteng") %>   
-          <td><%= link_to 'Tambah Gosok Genteng', new_gosok_path(rendam_id: rendam), class: "btn btn-info btn-fill btn-sm" %>
+        <% elsif current_user.role.eql?("gosok_genteng")  %>   
+          <td><%= link_to 'Tambah Gosok Genteng', new_gosok_path(rendam_id: rendam), class: "btn btn-info btn-fill btn-sm" if rendam.gosok.blank? %>
         <% end%>
           </tr>              
         <%end%>

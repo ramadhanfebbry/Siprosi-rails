@@ -35,7 +35,7 @@
           <div class="form-group">
             <label>Barang</label>
             <br>
-            <%= text_field_tag :barang_id, @rendam.cetak_gtg.ip.pb.rp.barang_id, :class => "form-control border-input", disabled: true %>
+            <%= text_field_tag :barang_id, @rendam.cetak_gtg.ip.pb.rp.barang.id_barang, :class => "form-control border-input", disabled: true %>
           </div>
         </div>
         
@@ -60,7 +60,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Cetak Genteng</label>
-            <%= f.select :cetak_gtg_id, CetakGtg.all.map { |c| [ c.id, c.id ] }, {}, :class => "form-control border-input" %>
+            <%= f.select :cetak_gtg_id, CetakGtg.all.map { |c| [ c.id, c.id ] }, {}, :class => "form-control border-input", readonly: true %>
           </div>
         </div>    
         

@@ -15,6 +15,7 @@ class CetakGtgsController < ApplicationController
   # GET /cetak_gtgs/new
   def new
     @cetak_gtg = CetakGtg.new
+    @cetak_gtg.ip = Ip.find(params[:ip_id]) if params[:ip_id]
   end
 
   # GET /cetak_gtgs/1/edit
