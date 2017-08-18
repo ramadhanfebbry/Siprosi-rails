@@ -1,7 +1,7 @@
 class ManageUsersController < ApplicationController
   before_action :set_user_params, only: [:edit, :update, :destroy]
   def index 
-    @users = User.all
+    @users = params[:q] ? User.search_for(params[:q]) : User.all
   end
 
   def show

@@ -4,7 +4,7 @@ class RendamsController < ApplicationController
   # GET /rendams
   # GET /rendams.json
   def index
-    @rendams = Rendam.all
+    @rendams = params[:q] ? Rendam.search_for(params[:q]) : Rendam.all
   end
 
   # GET /rendams/1

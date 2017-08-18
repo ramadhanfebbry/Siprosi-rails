@@ -1,4 +1,7 @@
 class Rp < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_for, :against => self.column_names.map {|x| x.to_sym}
+  
   validates :schedule_qty , :keterangan, :plan_date, presence: true
   belongs_to :barang
   before_save :set_site

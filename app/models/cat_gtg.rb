@@ -1,4 +1,6 @@
 class CatGtg < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_for, :against => self.column_names.map {|x| x.to_sym}
   validates :gosok_id , :hasil, :rusak, presence: true
   belongs_to :gosok
   has_one :hp, dependent: :destroy

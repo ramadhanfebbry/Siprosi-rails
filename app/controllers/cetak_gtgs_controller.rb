@@ -4,7 +4,7 @@ class CetakGtgsController < ApplicationController
   # GET /cetak_gtgs
   # GET /cetak_gtgs.json
   def index
-    @cetak_gtgs = CetakGtg.all
+    @cetak_gtgs = params[:q] ? CetakGtg.search_for(params[:q]) : CetakGtg.all 
   end
 
   # GET /cetak_gtgs/1

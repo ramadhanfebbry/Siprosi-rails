@@ -4,7 +4,7 @@ class CetakBloksController < ApplicationController
   # GET /cetak_bloks
   # GET /cetak_bloks.json
   def index
-    @cetak_bloks = CetakBlok.all
+    @cetak_bloks = params[:q] ? CetakBlok.search_for(params[:q]) : CetakBlok.all 
   end
 
   # GET /cetak_bloks/1

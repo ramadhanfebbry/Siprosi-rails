@@ -1,4 +1,6 @@
 class Pb < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_for, :against => self.column_names.map {|x| x.to_sym}
   validates :rp_id, presence: true
   belongs_to :rp
   has_one :ip, dependent: :destroy

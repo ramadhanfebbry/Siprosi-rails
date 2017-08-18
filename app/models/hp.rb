@@ -1,4 +1,6 @@
 class Hp < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_for, :against => self.column_names.map {|x| x.to_sym}
   belongs_to :cat_blok
   belongs_to :cat_gtg
   belongs_to :ip

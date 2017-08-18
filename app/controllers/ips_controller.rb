@@ -6,11 +6,11 @@ class IpsController < ApplicationController
   def index
     @ips = case current_user.role
     when "cetak_genteng"
-      Ip.genteng_site
+      params[:q] ? Ip.search_for(params[:q]).genteng_site : Ip.genteng_site
     when "cetak_blok"
-      Ip.blok_site
+      params[:q] ? Ip.search_for(params[:q]).blok_site : Ip.blok_site
     else
-      Ip.all
+      params[:q] ? Ip.search_for(params[:q]) : Ip.all
     end
     
   end

@@ -4,11 +4,11 @@ class DashboardController < ApplicationController
 
   def laporan
      if(params["tipe"] == "Genteng")
-      @hps = Hp.where("cat_gtg_id IS NOT NULL")
+      @hps = params[:q] ? Hp.search_for(params[:q]).where("cat_gtg_id IS NOT NULL") : Hp.where("cat_gtg_id IS NOT NULL")
     elsif (params["tipe"] == "Blok")
-      @hps = Hp.where("cat_blok_id IS NOT NULL")
+      @hps = params[:q] ? Hp.search_for(params[:q]).where("cat_blok_id IS NOT NULL") : Hp.where("cat_blok_id IS NOT NULL")
     else
-      @hps = Hp.all   
+      @hps = params[:q] ? Hp.search_for(params[:q]) : Hp.all
     end
 
     if(params["start_date"].present? && params["end_date"].present?)

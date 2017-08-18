@@ -4,7 +4,7 @@ class RpsController < ApplicationController
   # GET /rps
   # GET /rps.json
   def index
-    @rps = Rp.all
+    @rps = params[:q] ? Rp.search_for(params[:q]) : Rp.all
   end
 
   # GET /rps/1

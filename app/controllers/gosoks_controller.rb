@@ -4,7 +4,7 @@ class GosoksController < ApplicationController
   # GET /gosoks
   # GET /gosoks.json
   def index
-    @gosoks = Gosok.all
+    @gosoks = params[:q] ? Gosok.search_for(params[:q]) : Gosok.all
   end
 
   # GET /gosoks/1

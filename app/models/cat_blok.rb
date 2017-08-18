@@ -1,4 +1,6 @@
 class CatBlok < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_for, :against => self.column_names.map {|x| x.to_sym}
   validates :cetak_blok_id , :hasil, :rusak, presence: true
   belongs_to :cetak_blok  
   after_save :adjust_hp

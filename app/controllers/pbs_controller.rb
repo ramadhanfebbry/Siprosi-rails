@@ -4,7 +4,7 @@ class PbsController < ApplicationController
   # GET /pbs
   # GET /pbs.json
   def index
-    @pbs = Pb.all
+    @pbs =  params[:q] ? Pb.search_for(params[:q]) : Pb.all
   end
 
   # GET /pbs/1

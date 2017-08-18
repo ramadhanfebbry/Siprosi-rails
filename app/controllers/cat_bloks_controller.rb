@@ -4,7 +4,7 @@ class CatBloksController < ApplicationController
   # GET /cat_bloks
   # GET /cat_bloks.json
   def index
-    @cat_bloks = CatBlok.all
+    @cat_bloks = params[:q] ? CatBlok.search_for(params[:q]) : CatBlok.all 
   end
 
   # GET /cat_bloks/1

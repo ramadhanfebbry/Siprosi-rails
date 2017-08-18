@@ -53,3 +53,4 @@ gem 'devise'
 gem 'lazy_high_charts'
 gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
+gem 'pg_search'

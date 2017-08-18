@@ -12,4 +12,8 @@ module ApplicationHelper
       (controller_name.eql?('manage_users') && ['admin'].include?(current_user.role))
     end
   end
+
+  def show_search
+    return !(controller_name.eql?('dashboard') && action_name.eql?('home'))
+  end
 end

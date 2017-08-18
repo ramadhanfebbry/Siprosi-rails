@@ -14,7 +14,7 @@
             </div>
 
             <ul class="nav">
-                <li class="<%='active' if controller_name == 'dashboard' %>">
+                <li class="<%='active' if controller_name == 'dashboard' && action_name == 'home' %>">
                     <a href="/">
                         <i class="ti-panel"></i>
                         <p>Dashboard</p>
@@ -168,8 +168,22 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="notice"><%= notice %></p>
-                        <p class="alert"><%= alert %></p>
+                    <div id="imaginary_container"> 
+                    <p class="notice"><%= notice %></p>
+                    <p class="alert"><%= alert %></p>
+                    <% if show_search %>
+                    <div class="input-group stylish-input-group">
+                        <input type="text" class="form-control"  placeholder="Search" value="<%= params[:q] %>">
+                        <span class="input-group-addon">
+                            <button type="submit">
+                                <span class="ti-search"></span>
+                            </button>  
+                            </span>
+                        </div>
+                    </div>
+                    <% end %>
+            
+
                         <% if has_access_to_create %>
                           <div class="pull-right"><a class="btn btn-info btn-fill btn-wd" href="<%= controller_name %>/new">Tambah baru</a></div><div class="clearfix"></div><br/>
                         <% end %>

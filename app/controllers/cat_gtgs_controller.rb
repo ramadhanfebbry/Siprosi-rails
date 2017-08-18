@@ -4,7 +4,7 @@ class CatGtgsController < ApplicationController
   # GET /cat_gtgs
   # GET /cat_gtgs.json
   def index
-    @cat_gtgs = CatGtg.all
+    @cat_gtgs = params[:q] ? CatGtg.search_for(params[:q]) : CatGtg.all 
   end
 
   # GET /cat_gtgs/1

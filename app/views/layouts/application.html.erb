@@ -54,6 +54,17 @@
     <%= yield %>
 <script type="text/javascript">
     $('.datepicker').datepicker();
+    $(".stylish-input-group button").click(function(){
+        var value=$('.stylish-input-group input').val();
+        if(value.length > 0){
+            document.location = '?q='+ $('.stylish-input-group input').val();      
+        }else{
+            document.location = '';
+        }
+      
+    })
+
+
 </script>
 </body>
 </html>
