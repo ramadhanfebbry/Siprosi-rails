@@ -14,6 +14,6 @@ module ApplicationHelper
   end
 
   def show_search
-    return !(controller_name.eql?('dashboard') && action_name.eql?('home'))
+    return !(controller_name.eql?('dashboard') && action_name.eql?('home')) && (action_name.eql?('index'))
   end
 end

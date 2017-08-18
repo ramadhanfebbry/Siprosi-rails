@@ -64,6 +64,20 @@
       
     })
 
+    $('input[type=number]').on('keydown keyup', function(e){
+        var schedule_qty = $("input#schedule_qty").val()
+        if(schedule_qty != undefined){
+            if ($(this).val() > schedule_qty
+                && e.keyCode != 46 // delete
+                && e.keyCode != 8 // backspace
+               ) {
+               e.preventDefault();
+               $(this).val(schedule_qty);
+            }        
+        }
+    
+});
+
 
 </script>
 </body>
