@@ -53,7 +53,7 @@
     <%= render 'layouts/leftmenu' if user_signed_in?  %>
     <%= yield %>
 <script type="text/javascript">
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({ minDate: 0 });
     $(".stylish-input-group button").click(function(){
         var value=$('.stylish-input-group input').val();
         if(value.length > 0){

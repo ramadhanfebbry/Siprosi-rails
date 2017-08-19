@@ -36,7 +36,7 @@
           <% if current_user.role == 'ppic' %> 
           <td>
             <%= link_to 'Edit', edit_rp_path(rp), class: "btn btn-info btn-fill btn-sm" %>
-            <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete %> 
+            <%= link_to 'Destroy', rp, class: "btn btn-danger btn-fill btn-sm", data: {confirm: "Anda yakin akan menghapus data ini?"}, method: :delete if rp.pb.blank? %> 
           </td>    
           <% elsif current_user.role == 'produksi' %> 
           <td>
