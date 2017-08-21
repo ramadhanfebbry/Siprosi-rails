@@ -4,7 +4,7 @@ class HpsController < ApplicationController
   # GET /hps
   # GET /hps.json
   def index
-    @hps = params[:q] ? Hp.approved.search_for(params[:q]) : Hp.approved
+    @hps = params[:q] ? Hp.search_for(params[:q]) : Hp.all
   end
 
   def reject_produksi
