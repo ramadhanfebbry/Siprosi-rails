@@ -78,17 +78,21 @@ class Hp < ActiveRecord::Base
   end
 
   def self.approved
-    res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty <= cetak_bloks.hasil OR cat_bloks.id IS NULL")
-    res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty <= cat_gtgs.hasil OR cat_gtgs.id IS NULL")
+    res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty <= cetak_bloks.hasil")
+    res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty <= cat_gtgs.hasil")
     return res_one + res_two
+  end
+
+  def hide_it
+    true if (!hasil_produksi.zero? && target_produksi > hasil_produksi)
   end
 
   
   def hasil_produksi
     if cat_blok
-      cat_blok.hasil
+      cat_blok.hasil rescue 0
     else
-      cat_gtg.hasil
+      cat_gtg.hasil rescue 0
     end
   end
 
@@ -97,7 +101,7 @@ class Hp < ActiveRecord::Base
   end
 
   def rp
-    ip.pb.rp rescue nil
+    ip.pb.rp
   end
 
   def self.hasil_prod_genteng
