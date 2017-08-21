@@ -77,14 +77,14 @@ class Hp < ActiveRecord::Base
     return res_one + res_two
   end
 
-  def self.all
+  def self.approved
     res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty <= cetak_bloks.hasil")
     res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty <= cat_gtgs.hasil")
     return res_one + res_two
   end
 
   def hide_it
-    true if (!hasil_produksi.zero? && target_produksi > hasil_produksi)
+    nil if (!hasil_produksi.zero? && target_produksi > hasil_produksi)
   end
 
   
