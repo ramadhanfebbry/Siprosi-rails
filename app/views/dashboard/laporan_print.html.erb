@@ -34,34 +34,31 @@
   <h3 align="center">Laporan Produksi</h3>
     <div class="content table-responsive table-full-width">  
     <table class="table table-striped">
-      <thead>
-        <th>No. RP</th>
-        <th>Tgl. RP</th>
-        <th>No. PB</th>
-        <th>Tgl. PB</th>
-        <th>No. IP</th>
-        <th>Tgl. IP</th>
-        <th>Kode Barang</th>        
-        <th>Hasil Produksi</th>        
+    <thead>
+        <th>Rencana Produksi</th>
+        <th>Plan Date</th>
+        <th>Hasil Produksi</th>
+        <th>Rusak Produksi</th>    
+        <th>Target Produksi</th>    
+        <th>Kode Barang</th>
         <th>Site</th>
-        <th>Status</th>        
+        <th>Status Pengerjaan</th>    
       </thead>
       <tbody>
         <% @hps.each do |hp| %>
         <% next if hp.ip.blank? %>
         <tr>
           <td><%= hp.rp.mask_id %></td>   
-          <td><%= hp.rp.created_at.to_date %></td>   
-          <td><%= hp.ip.pb.mask_id %></td>   
-          <td><%= hp.ip.pb.created_at.to_date %></td>   
-          <td><%= hp.ip.mask_id %></td>   
-          <td><%= hp.ip.created_at.to_date %></td>   
-          <td><%= hp.rp.barang.id_barang %></td>     
+          <td><%= hp.rp.plan_date %></td>   
           <td><%= hp.hasil_status_pengerjaan %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.target_prouksi - hp.hasil_status_pengerjaan %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.target_prouksi %> <%= hp.rp.barang.unit %></td>
+          <td><%= hp.rp.barang.id_barang %></td>             
           <td><%= hp.rp.site %></td>                  
           <td><%= hp.status_pengerjaan %></td>                  
         </tr>              
         <%end%>
+
       </tbody>
     </table>
 
