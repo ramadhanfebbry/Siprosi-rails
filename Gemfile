@@ -55,3 +55,6 @@ gem 'chosen-rails'
 gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 gem 'pg_search'
 gem 'faker'
+group :production do
+  gem "rails_12factor"
+end

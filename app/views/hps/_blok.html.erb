@@ -1,4 +1,4 @@
-<% if (@hp.cat_blok.cetak_blok rescue nil) %>
+<% if (@hp.ip.cetak_blok rescue nil) %>
 <div class="card">
   <div class="header">
     <h4 class="title">Cetak Blok</h4>
@@ -16,13 +16,13 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @hp.cat_blok.cetak_blok.id %></td>
-          <td><%= @hp.cat_blok.cetak_blok.ip_id %></td>
-          <td><%= @hp.cat_blok.cetak_blok.created_at.to_date %></td>
-          <td><%= @hp.cat_blok.cetak_blok.hasil %></td>
-          <td><%= @hp.cat_blok.cetak_blok.rusak %></td>
+          <td><%= @hp.ip.cetak_blok.id %></td>
+          <td><%= @hp.ip.cetak_blok.ip_id %></td>
+          <td><%= @hp.ip.cetak_blok.created_at.to_date %></td>
+          <td><%= @hp.ip.cetak_blok.hasil %></td>
+          <td><%= @hp.ip.cetak_blok.rusak %></td>
           <td><%= @hp.target_produksi %></td>
-          <td><%= @hp.cat_blok.cetak_blok.keterangan %></td>       
+          <td><%= @hp.ip.cetak_blok.keterangan %></td>       
           
         </tr>  
       </tbody>
@@ -33,7 +33,7 @@
 
 <% end %>
 
-<% if @hp.cat_blok %>
+<% if @hp.ip.cetak_blok %>
 <div class="card">
   <div class="header">
     <h4 class="title">Cat</h4>
@@ -49,11 +49,11 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @hp.cat_blok.id %></td>
-          <td><%= @hp.cat_blok.created_at.to_date %></td>
-          <td><%= @hp.cat_blok.hasil %></td>
-          <td><%= @hp.cat_blok.rusak %></td>
-          <td><%= @hp.cat_blok.keterangan %></td>       
+          <td><%= @hp.ip.cetak_blok.cat_blok.id %></td>
+          <td><%= @hp.ip.cetak_blok.cat_blok.created_at.to_date %></td>
+          <td><%= @hp.ip.cetak_blok.cat_blok.hasil %></td>
+          <td><%= @hp.ip.cetak_blok.cat_blok.rusak %></td>
+          <td><%= @hp.ip.cetak_blok.cat_blok.keterangan %></td>       
           
         </tr>  
       </tbody>
