@@ -19,7 +19,7 @@ class CetakBloksController < ApplicationController
     if params[:ip_id]
     @cetak_blok.ip = Ip.find(params[:ip_id]) 
     plan_date = Date.strptime(@cetak_blok.ip.pb.rp.plan_date, '%m/%d/%Y')
-    if plan_date >= Date.today
+    if plan_date > Date.today
       redirect_to :back, notice: "Tambah Cetak Blok tidak boleh sebelum 'Plan Date'"
     end
     
