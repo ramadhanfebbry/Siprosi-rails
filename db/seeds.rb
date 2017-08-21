@@ -83,7 +83,7 @@ Rp.destroy_all
 
 ["06", "07", "08"].each do |bln|
   (1..30).each do |i|
-    rp = Rp.create(schedule_qty: rand(1000), plan_date: "#{i}/#{bln}/2017", barang_id: Barang.pluck(:id).sample, 
+    rp = Rp.create(schedule_qty: rand(1000), plan_date: "#{bln}/#{i}/2017", barang_id: Barang.pluck(:id).sample, 
       nama_customer: Faker::Name.unique.name, keterangan: "test", alamat: Faker::Address.street_address, telpon: Faker::PhoneNumber.phone_number)
     pb = Pb.create!(status: 'Konfirmasi', rp_id: rp.id)
     ip = Ip.create(pb_id: pb.id)
