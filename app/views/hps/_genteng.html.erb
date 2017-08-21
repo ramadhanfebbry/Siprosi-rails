@@ -1,4 +1,4 @@
-<% if (@hp.cat_gtg.gosok.rendam.cetak_gtg rescue nil)%>
+<% if (@hp.ip.cetak_gtg rescue nil)%>
 <div class="card">
   <div class="header">
     <h4 class="title">Cetak Genteng</h4>
@@ -16,13 +16,13 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.id %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.ip_id %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.created_at.to_date %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.hasil %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.rusak %></td>
+          <td><%= @hp.ip.cetak_gtg.id %></td>
+          <td><%= @hp.ip.cetak_gtg.ip_id %></td>
+          <td><%= @hp.ip.cetak_gtg.created_at.to_date %></td>
+          <td><%= @hp.ip.cetak_gtg.hasil %></td>
+          <td><%= @hp.ip.cetak_gtg.rusak %></td>
           <td><%= @hp.target_produksi %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.keterangan %></td>       
+          <td><%= @hp.ip.keterangan %></td>       
           
         </tr>  
       </tbody>
@@ -31,7 +31,7 @@
   </div>
 </div>
 <% end %>
-<% if (@hp.cat_gtg.gosok.rendam rescue nil)%>
+<% if (@hp.ip.cetak_gtg.rendam rescue nil)%>
 <div class="card">
   <div class="header">
     <h4 class="title">Rendam</h4>
@@ -47,11 +47,11 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @hp.cat_gtg.gosok.rendam.id %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.created_at.to_date %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.hasil %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.rusak %></td>
-          <td><%= @hp.cat_gtg.gosok.rendam.keterangan %></td>       
+          <td><%= @hp.ip.cetak_gtg.rendam.id %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.created_at.to_date %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.hasil %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.rusak %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.keterangan %></td>       
           
         </tr>  
       </tbody>
@@ -60,7 +60,7 @@
   </div>
 </div>
 <% end %>
-<% if (@hp.cat_gtg.gosok rescue nil)%>
+<% if (@hp.ip.cetak_gtg.rendam.gosok rescue nil)%>
 
 <div class="card">
   <div class="header">
@@ -77,11 +77,11 @@
       </thead>
       <tbody>
         <tr>
-          <td><%= @hp.cat_gtg.gosok.id %></td>
-          <td><%= @hp.cat_gtg.gosok.created_at.to_date %></td>
-          <td><%= @hp.cat_gtg.gosok.hasil %></td>
-          <td><%= @hp.cat_gtg.gosok.rusak %></td>
-          <td><%= @hp.cat_gtg.gosok.keterangan %></td>       
+          <td><%= @hp.ip.cetak_gtg.rendam.gosok.id %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.gosok.created_at.to_date %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.gosok.hasil %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.gosok.rusak %></td>
+          <td><%= @hp.ip.cetak_gtg.rendam.gosok.keterangan %></td>       
           
         </tr>  
       </tbody>
