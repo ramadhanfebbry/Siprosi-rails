@@ -7,9 +7,20 @@ class CetakGtg < ActiveRecord::Base
   validates :ip_id, uniqueness: true
   after_create :notify
 
+
   def notify
     notif = Notification.first
     notif.cetak_gtg_count = notif.cetak_gtg_count+1
     notif.save
+  end
+
+  validate :should_less_than_schedule_qty
+
+  private
+
+  def should_less_than_schedule_qty      
+    if (self.hasil + self.rusak) > self.ip.pb.rp.schedule_qty
+      errors.add('Quantity', "tidak boleh lebih dari Schedule Qty")
+    end
   end
 end

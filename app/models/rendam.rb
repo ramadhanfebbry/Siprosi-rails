@@ -13,4 +13,14 @@ class Rendam < ActiveRecord::Base
     notif.rendam_count = notif.rendam_count+1
     notif.save
   end
+
+  validate :should_less_than_schedule_qty
+
+  private
+
+  def should_less_than_schedule_qty      
+    if (self.hasil + self.rusak) > self.cetak_gtg.ip.pb.rp.schedule_qty
+      errors.add('Quantity', "tidak boleh lebih dari Schedule Qty")
+    end
+  end
 end

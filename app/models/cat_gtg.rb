@@ -18,4 +18,14 @@ class CatGtg < ActiveRecord::Base
   def adjust_hp
     gosok.rendam.cetak_gtg.ip.hp.update_attributes(cat_gtg_id: self.id)
   end
+
+  validate :should_less_than_schedule_qty
+
+  private
+
+  def should_less_than_schedule_qty      
+    if (self.hasil + self.rusak) > self.gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty
+      errors.add('Quantity', "tidak boleh lebih dari Schedule Qty")
+    end
+  end
 end

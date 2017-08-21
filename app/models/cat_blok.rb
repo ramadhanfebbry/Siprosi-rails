@@ -19,4 +19,14 @@ class CatBlok < ActiveRecord::Base
   def adjust_hp
     cetak_blok.ip.hp.update_attributes(cat_blok_id: self.id)
   end
+
+  validate :should_less_than_schedule_qty
+
+  private
+
+  def should_less_than_schedule_qty      
+    if (self.hasil + self.rusak) > self.cetak_blok.ip.pb.rp.schedule_qty
+      errors.add('Quantity', "tidak boleh lebih dari Schedule Qty")
+    end
+  end
 end
