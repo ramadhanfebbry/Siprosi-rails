@@ -79,3 +79,12 @@ connection.execute("INSERT INTO barangs (id_barang, kategori_id, type_barang, un
 ('PB-00001', 2, 'jsk', 'pcs', 'jk', '8', 'P-PGD GTG Warna-site');")
 
 Notification.create()
+Rp.destroy_all
+
+["06", "07", "08"].each do |bln|
+  (1..30).each do |i|
+    Rp.create!(schedule_qty: rand(1000), plan_date: "#{i}/#{bln}/2017", barang_id: Barang.pluck(:id).sample, 
+      nama_customer: Faker::Name.unique.name, keterangan: "test", alamat: Faker::Address.street_address, telpon: Faker::PhoneNumber.phone_number)
+  end
+end
+
