@@ -90,3 +90,8 @@ Rp.destroy_all
   end
 end
 
+Hp.all.each do |hp|
+  next if hp.ip.blank?
+  plan_date = Date.strptime(hp.ip.pb.rp.plan_date, '%m/%d/%Y').to_datetime
+  hp.update_attribute(:created_at, plan_date)
+end

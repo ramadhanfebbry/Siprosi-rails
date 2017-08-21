@@ -20,7 +20,8 @@ class Ip < ActiveRecord::Base
   end
 
   def create_hp
-    Hp.create(ip_id: self.id)
+    plan_date = Date.strptime(self.pb.rp.plan_date, '%m/%d/%Y').to_datetime
+    Hp.create(ip_id: self.id, created_at: plan_date)
   end
 
   after_create :notify
