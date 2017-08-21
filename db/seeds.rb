@@ -77,14 +77,16 @@ connection.execute("INSERT INTO barangs (id_barang, kategori_id, type_barang, un
 ('GTG-00064', 1, 'Majectic Nok Siku', 'pcs', 'Natural', '4.45', 'P-PGD GTG Warna-site'),
 ('GTG-00065', 1, 'Majetic Nok Atas', 'pcs', 'Natural', '4.45', 'P-PGD GTG Warna-site'),
 ('PB-00001', 2, 'jsk', 'pcs', 'jk', '8', 'P-PGD GTG Warna-site');")
-
+Notification.destroy_all
 Notification.create()
 Rp.destroy_all
 
 ["06", "07", "08"].each do |bln|
   (1..30).each do |i|
-    Rp.create!(schedule_qty: rand(1000), plan_date: "#{i}/#{bln}/2017", barang_id: Barang.pluck(:id).sample, 
+    rp = Rp.create(schedule_qty: rand(1000), plan_date: "#{i}/#{bln}/2017", barang_id: Barang.pluck(:id).sample, 
       nama_customer: Faker::Name.unique.name, keterangan: "test", alamat: Faker::Address.street_address, telpon: Faker::PhoneNumber.phone_number)
+    pb = Pb.create!(status: 'Konfirmasi', rp_id: rp.id)
+    ip = Ip.create(pb_id: pb.id)
   end
 end
 
