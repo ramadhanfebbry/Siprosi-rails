@@ -78,8 +78,8 @@ class Hp < ActiveRecord::Base
   end
 
   def self.approved
-    res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty <= cetak_bloks.hasil")
-    res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty <= cat_gtgs.hasil")
+    res_one = joins(:cat_blok => {:cetak_blok => {:ip => {:pb => :rp}} }).where("rps.schedule_qty <= cetak_bloks.hasil OR cat_bloks.id IS NULL")
+    res_two = joins(:cat_gtg => {:gosok => {:rendam => {:cetak_gtg => {:ip => {:pb => :rp}}}}}).where("rps.schedule_qty <= cat_gtgs.hasil OR cat_gtgs.id IS NULL")
     return res_one + res_two
   end
 
