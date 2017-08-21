@@ -25,8 +25,8 @@ class CatBlok < ActiveRecord::Base
   private
 
   def should_less_than_schedule_qty      
-    if (self.hasil + self.rusak) > self.cetak_blok.ip.pb.rp.schedule_qty
-      errors.add('Quantity', "tidak boleh lebih dari Schedule Qty")
+    if (self.hasil + self.rusak) != self.cetak_blok.ip.pb.rp.schedule_qty
+      errors.add('Quantity', "jumlah hasil & rusak harus sama dengan Schedule Qty")
     end
   end
 end
