@@ -10,6 +10,7 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Target Produksi</th>
         <th>Keterangan</th>                      
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
           <td><%= @hp.cat_blok.cetak_blok.created_at.to_date %></td>
           <td><%= @hp.cat_blok.cetak_blok.hasil %></td>
           <td><%= @hp.cat_blok.cetak_blok.rusak %></td>
+          <td><%= @hp.target_produksi %></td>
           <td><%= @hp.cat_blok.cetak_blok.keterangan %></td>       
           
         </tr>  

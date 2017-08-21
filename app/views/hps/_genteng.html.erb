@@ -10,6 +10,7 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Target Produksi</th>
         <th>Keterangan</th>                      
       </thead>
       <tbody>
@@ -19,6 +20,7 @@
           <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.created_at.to_date %></td>
           <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.hasil %></td>
           <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.rusak %></td>
+          <td><%= @hp.target_produksi %></td>
           <td><%= @hp.cat_gtg.gosok.rendam.cetak_gtg.keterangan %></td>       
           
         </tr>  
