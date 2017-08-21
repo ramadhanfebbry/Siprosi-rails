@@ -97,7 +97,7 @@ class Hp < ActiveRecord::Base
   end
 
   def rp
-    ip.pb.rp
+    ip.pb.rp rescue nil
   end
 
   def self.hasil_prod_genteng

@@ -51,7 +51,7 @@
                         </a>
                 </li>
                 <% end %>
-                <% if current_user.role == 'ppic' %> 
+                <% if current_user.role == 'ppic' || current_user.role == 'produksi' %> 
                 <li class="<%='active' if controller_name == 'hps' && action_name.eql?('reject_produksi') %>">
                         <a href="/reject_produksi">
                             <i class="ti-view-list-alt"></i>

@@ -18,6 +18,7 @@
       </thead>
       <tbody>
         <% @hps.each_with_index do |hp| %>
+        <% next if hp.ip.blank? %>
         <tr>
           <td><%= hp.id %></td>   
           <td><%= hp.ip.mask_id %></td>   

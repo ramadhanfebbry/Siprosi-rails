@@ -49,6 +49,7 @@
       </thead>
       <tbody>
         <% @hps.each do |hp| %>
+        <% next if hp.ip.blank? %>
         <tr>
           <td><%= hp.rp.mask_id %></td>   
           <td><%= hp.rp.created_at.to_date %></td>   
