@@ -84,7 +84,7 @@ class Hp < ActiveRecord::Base
   end
 
   def hide_it
-    nil if (!hasil_produksi.zero? && target_produksi > hasil_produksi)
+    nil if (target_produksi > hasil_produksi)
   end
 
   

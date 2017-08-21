@@ -19,6 +19,7 @@
       <tbody>
         <% @hps.each_with_index do |hp| %>
         <% next if hp.ip.blank? %>
+        <% next if (hp.target_produksi > hp.hasil_produksi) && !hp.hasil_produksi.zero? %>
         <tr>
           <td><%= hp.id %></td>   
           <td><%= hp.ip.mask_id %></td>   
