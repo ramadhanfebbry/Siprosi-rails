@@ -1,3 +1,4 @@
+<% if (@hp.cat_gtg.gosok.rendam.cetak_gtg rescue nil)%>
 <div class="card">
   <div class="header">
     <h4 class="title">Cetak Genteng</h4>
@@ -29,7 +30,8 @@
 
   </div>
 </div>
-
+<% end %>
+<% if (@hp.cat_gtg.gosok.rendam rescue nil)%>
 <div class="card">
   <div class="header">
     <h4 class="title">Rendam</h4>
@@ -57,6 +59,8 @@
 
   </div>
 </div>
+<% end %>
+<% if (@hp.cat_gtg.gosok rescue nil)%>
 
 <div class="card">
   <div class="header">
@@ -86,6 +90,8 @@
   </div>
 </div>
 
+<% end %>
+<% if (@hp.cat_gtg rescue nil)%>
 <div class="card">
   <div class="header">
     <h4 class="title">Cat</h4>
@@ -113,3 +119,4 @@
 
   </div>
 </div>
+<% end %>
