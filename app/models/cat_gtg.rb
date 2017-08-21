@@ -24,8 +24,8 @@ class CatGtg < ActiveRecord::Base
   private
 
   def should_less_than_schedule_qty      
-    if (self.hasil + self.rusak) != self.gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty
-      errors.add('Quantity', "jumlah hasil & rusak harus sama dengan Schedule Qty")
+    if (self.hasil + self.rusak) != self.gosok.hasil
+      errors.add('Quantity', "jumlah hasil & rusak harus sama dengan hasil Gosok Genteng (#{self.gosok.hasil})")      
     end
   end
 end
