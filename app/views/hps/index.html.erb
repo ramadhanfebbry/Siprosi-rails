@@ -18,7 +18,8 @@
       </thead>
       <tbody>
         <% @hps.each_with_index do |hp| %>
-        <% next if hp.ip.blank? %>
+        <% next if (hp.ip.blank? || hp.ip.pb.blank?)%>
+        <% next if (hp.ip.cetak_gtg.blank? || hp.ip.cetak_blok.blank?) %>
         <% next if (hp.target_produksi > hp.hasil_produksi) && !hp.hasil_produksi.zero? %>
         <tr>
           <td><%= hp.id %></td>   

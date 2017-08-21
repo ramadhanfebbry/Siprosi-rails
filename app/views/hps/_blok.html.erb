@@ -1,3 +1,4 @@
+<% if (@hp.cat_blok.cetak_blok rescue nil) %>
 <div class="card">
   <div class="header">
     <h4 class="title">Cetak Blok</h4>
@@ -30,6 +31,9 @@
   </div>
 </div>
 
+<% end %>
+
+<% if @hp.cat_blok %>
 <div class="card">
   <div class="header">
     <h4 class="title">Cat</h4>
@@ -57,3 +61,4 @@
 
   </div>
 </div>
+<% end %>
