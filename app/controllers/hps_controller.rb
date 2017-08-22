@@ -8,8 +8,7 @@ class HpsController < ApplicationController
   end
 
   def reject_produksi
-    @hps = params[:q] ? Hp.search_for(params[:q]).reject : Hp.reject
-    render 'index'
+    @hps = params[:q] ? Hp.search_for(params[:q]).reject : Hp.reject    
   end
 
   # GET /hps/1
