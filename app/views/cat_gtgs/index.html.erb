@@ -12,6 +12,9 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Plan date</th>
         <th>Keterangan</th>
         <th>Aksi</th>
       </thead>
@@ -23,6 +26,9 @@
           <td><%= cat_gtg.created_at.to_date %></td>
           <td><%= cat_gtg.hasil %></td>
           <td><%= cat_gtg.rusak %></td>
+          <td><%= cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty %></td>
+          <td><%= cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.barang.id_barang %></td>
+          <td><%= cat_gtg.gosok.rendam.cetak_gtg.ip.pb.rp.plan_date %></td>
           <td><%= cat_gtg.keterangan %></td>
           <td>
             <%= link_to 'Edit', edit_cat_gtg_path(cat_gtg), class: "btn btn-info btn-fill btn-sm" %>            

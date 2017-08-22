@@ -11,6 +11,9 @@
         <th>Date</th>
         <th>Hasil</th>
         <th>Rusak</th>
+        <th>Schedule qty</th>
+        <th>Item name</th>
+        <th>Plan date</th>
         <th>Keterangan</th>        
         <% if current_user.role.eql?("gosok_genteng") || current_user.role.eql?("cat_genteng") %>   
         <th>Aksi</th>
@@ -24,6 +27,9 @@
           <td><%= gosok.created_at.to_date %></td>
           <td><%= gosok.hasil %></td>
           <td><%= gosok.rusak %></td>
+          <td><%= gosok.rendam.cetak_gtg.ip.pb.rp.schedule_qty %></td>
+          <td><%= gosok.rendam.cetak_gtg.ip.pb.rp.barang.id_barang %></td>
+          <td><%= gosok.rendam.cetak_gtg.ip.pb.rp.plan_date %></td>
           <td><%= gosok.keterangan %></td>
           <td>
           <% if current_user.role.eql?("gosok_genteng") %>   
