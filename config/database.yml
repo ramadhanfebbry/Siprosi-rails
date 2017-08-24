@@ -15,10 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: siprosi_dev
-  pool: 5
-  username: postgres
-  password: admin2
+  url: "postgres://psibmearvpmdll:0a28fa61b1a3826b7f46d88b3fb7e793aefb24594d75c67904ad1b35d522f33e@ec2-54-225-182-108.compute-1.amazonaws.com:5432/dbovj7edhct781"
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -49,7 +46,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sample_postgres_production
-  pool: 5
-  username: sample_postgres
-  password:
+  #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#
+# You can use this database configuration with:
+#
+#   production:
+  # url: "postgres://psibmearvpmdll:0a28fa61b1a3826b7f46d88b3fb7e793aefb24594d75c67904ad1b35d522f33e@ec2-54-225-182-108.compute-1.amazonaws.com:5432/dbovj7edhct781"
